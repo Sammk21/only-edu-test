@@ -1,14 +1,13 @@
-import TestCards from "@/modules/test-cards";
-import Image from "next/image";
+import CategoryCard from "@/modules/category-cards";
 
 export default function Home() {
   return (
-    <div className=" flex justify-center items-center py-28 bg-gradient-to-r from-orange-100 to-teal-100">
-      <div className="relative w-[calc(100vw_-_1rem)]   rounded-3xl ">
-        <div className="h-full w-full">
-          <div className="font-semibold text-[4vw] flex justify-around items-center py-3  h-96">
-            <div className="bg-">
-              <h1>Online Test</h1>
+    <div className=" flex justify-center items-center py-28 bg-gradient-to-r from-orange-100 to-teal-100 overflow-hidden">
+      <div className="relative w-[calc(100vw_-_1rem)]   rounded-3xl">
+        <div className="h-full w-full ">
+          <div className="font-semibold text-[4vw] flex justify-around items-center py-3  h-96  sticky">
+            <div className="">
+              <h1 className="">Online Test</h1>
               <h3 className="text-gray-400 text-sm">
                 Take tests to show off your talent
               </h3>
@@ -80,13 +79,32 @@ export default function Home() {
               </svg>
             </div>
           </div>
-          <div className="grid xl:grid-cols-3 grid-rows-3 gap-3 px-6 lg:grid-cols-2 grid-cols-1">
-            <TestCards />
-            <TestCards />
-            <TestCards />
-            <TestCards />
-
-            {/* <TestCards /> */}
+          <div className="container mx-auto bg-white rounded-3xl py-12">
+            <div className="sm:px-6 px-3">
+              <h1 className="capitalize mb-5 sm:mb-10 font-semibold sm:text-8xl lg:text-9xl tracking-tighter line-clamp-1">
+                Only tests
+              </h1>
+              <div className="sort flex gap-x-2 text-[#115e5d] py-5 overflow-x-scroll">
+                <span className="bg-[#fd7c22] px-4 py-2 rounded-full cursor-pointer hover:bg-[#fd7c22] text-white transition-colors ease-in-out border active ">
+                  Engneering
+                </span>
+                <span className="bg-[#9dcdd3e0] px-4 py-2 rounded-full cursor-pointer hover:bg-[#fd7c22] hover:text-white transition-colors ease-in-out border">
+                  Medical
+                </span>
+                <span className="bg-[#9dced3e0] px-4 py-2 rounded-full cursor-pointer hover:bg-[#fd7c22] hover:text-white transition-colors ease-in-out border">
+                  Computer
+                </span>
+                <span className="bg-[#9dced3E0] px-4 py-2 rounded-full cursor-pointer hover:bg-[#fd7c22] hover:text-white transition-colors ease-in-out border">
+                  Finance
+                </span>
+              </div>
+              <div className="grid xl:grid-cols-3 py-2 gap-3 lg:grid-cols-2 grid-cols-1">
+                <CategoryCard />
+                <CategoryCard />
+                <CategoryCard />
+                {/* <TestCards /> */}
+              </div>
+            </div>
           </div>
         </div>
       </div>
