@@ -80,7 +80,7 @@ export default function Home() {
               </svg>
             </div>
           </div>
-          <div className="grid lg:grid-cols-3 grid-rows-3 gap-3 px-6 sm:grid-cols-2 grid-cols-1">
+          <div className="grid xl:grid-cols-3 grid-rows-3 gap-3 px-6 lg:grid-cols-2 grid-cols-1">
             <TestCards />
             <TestCards />
             <TestCards />
