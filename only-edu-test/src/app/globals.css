@@ -18,6 +18,21 @@
 }
 
 
+h1{
+  font-size: 64px;
+}
+h2{
+  font-size: 40px;
+}
+h3{
+  font-size: 24px;
+}
+p{
+  font-size: 15px;
+  }
+  .accent-text{
+    font-size: 10px;
+  }
 
 @layer utilities {
   .text-balance {
@@ -41,3 +56,4 @@
     transform-origin: left center;
 }
 svg#freepik_stories-research-paper:not(.animated) .animable {opacity: 0;}svg#freepik_stories-research-paper.animated #freepik--background-complete--inject-4 {animation: 1s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) fadeIn,3s Infinite  linear floating;animation-delay: 0s,1.5s;}svg#freepik_stories-research-paper.animated #freepik--Character--inject-4 {animation: 1.5s Infinite  linear floating;animation-delay: 0s;}            @keyframes fadeIn {                0% {                    opacity: 0;                }                100% {                    opacity: 1;                }            }                    @keyframes floating {                0% {                    opacity: 1;                    transform: translateY(0px);                }                50% {                    transform: translateY(-10px);                }                100% {                    opacity: 1;                    transform: translateY(0px);                }            }        
+
