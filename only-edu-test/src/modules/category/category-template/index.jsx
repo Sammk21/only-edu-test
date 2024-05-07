@@ -3,7 +3,7 @@ import CategoryCard from "../category-cards";
 
 const CategoryTemplate = () => {
   return (
-    <div className="container mx-auto bg-white rounded-3xl py-12">
+    <div className=" mx-auto bg-white rounded-3xl py-12">
       <div className="sm:px-6 px-3">
         <h1 className="capitalize mb-5 sm:mb-10 font-semibold sm:text-8xl lg:text-9xl tracking-tighter line-clamp-1">
           Only tests

@@ -3,6 +3,7 @@
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { MdOutlineArrowRightAlt } from "react-icons/md";
 
 // Import Swiper styles
 import "swiper/css";
@@ -10,7 +11,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import Image from "next/image";
-import { useState } from "react";
 
 const slides = [
   {
@@ -30,20 +30,20 @@ const slides = [
 
 const Hero = () => {
   return (
-    <div className="font-semibold text-[4vw] flex items-center py-3 sticky justify-center">
+    <div className="font-semibold text-[4vw] flex flex-col items-center py-3 sticky justify-center h-[50vh] sm:h-[80vh]">
       <Swiper
         speed={700}
-        spaceBetween={30}
+        spaceBetween={10}
         pagination={{
           clickable: true,
         }}
-        navigation={true}
         modules={[Pagination, Navigation]}
-        slidesPerView={1.2}
+        slidesPerView={1.5}
+        navigation={{ nextEl: ".back", prevEl: ".front" }}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="aspect-auto lg:aspect-video h-[50vh] sm:h-[80vh] relative">
+            <div className="aspect-auto lg:aspect-[]  relative h-full">
               <Image
                 src={slide.src}
                 alt={`Slide ${index + 1}`}
@@ -52,13 +52,21 @@ const Hero = () => {
                 className="object-cover object-center rounded-3xl"
                 style={{ filter: "brightness(50%)" }} // Adjust image brightness
               />
-              <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
+              <div className="absolute inset-0 flex items-center justify-center text-white text-2xl sm:text-3xl lg:text-4xl  font-bold">
                 {slide.text}
               </div>
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className="flex justify-end w-full gap-x-3 py-3 px-3">
+        <span className="front transition ease-in-out  cursor-pointer rotate-180  border-[2px] z-40 p-1 sm:p-2 rounded-full text-5xl text-white  bg-[#115e5d] hover:bg-[#fd7d22eb] textglobal  hover:-translate-x-2 ">
+          <MdOutlineArrowRightAlt />
+        </span>
+        <span className="back transition ease-in-out cursor-pointer z-40 sm:p-2 p-1  rounded-full border-[2px]  text-5xl text-white  textglobal bg-[#115e5d] hover:bg-[#fd7c22eb] hover:translate-x-2  ">
+          <MdOutlineArrowRightAlt />
+        </span>
+      </div>
     </div>
   );
 };

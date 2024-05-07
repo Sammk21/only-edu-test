@@ -5,21 +5,29 @@ import {
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
+  useCycle,
 } from "framer-motion";
 import { cn } from "@/util/cn";
 import Link from "next/link";
+import MenuToggle from "./menu-toggle/MenuToggle";
+import MobileMenu from "./mobile-menu";
 
 export const FloatingNav = ({ navItems, className }) => {
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
       let direction = current - scrollYProgress.getPrevious();
 
-      if (scrollYProgress.get() < 0.3) {
+      if (scrollYProgress.get() < 0.1) {
         setVisible(false);
       } else {
         if (direction < 0) {
@@ -33,8 +41,8 @@ export const FloatingNav = ({ navItems, className }) => {
 
   return (
     <>
-      <div className="w-full absolute top-0 left-0 bg-[#115e5d] h-24 border-b rounded-b-3xl shadow-md">
-        <div className="flex max-w-[calc(100vw_-_3rem)]  mx-auto  bg-[#115e5d] z-[5000] pl-8 py-5 h-full  pr-5 justify-end items-center">
+      <div className="w-full absolute top-0 left-0 bg-[#115e5d] h-24 border-b rounded-b-3xl shadow-md z-[99]">
+        <div className="flex max-w-[calc(100vw_-_3rem)]  mx-auto  bg-[#115e5d] z-[5000] pl-8 py-5 h-full   sm:pr-5 justify-end items-center">
           <div className="absolute top-1/2 left-5 -translate-y-1/2">
             <div className="justify-center items-center flex gap-x-3">
               <svg
@@ -103,7 +111,7 @@ export const FloatingNav = ({ navItems, className }) => {
               <h4 className="font-semibold text-white">Only edu</h4>
             </div>
           </div>
-          <div className="flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-x-6">
+          <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-x-6 hidden sm:flex justify-end">
             {navItems.map((navItem, idx) => (
               <Link
                 key={`link-${idx}`}
@@ -112,12 +120,18 @@ export const FloatingNav = ({ navItems, className }) => {
                   "relative  items-center flex space-x-1 text-white"
                 )}
               >
-                <span className="block sm:hidden">{navItem.icon}</span>
-                <span className="hidden sm:block text-sm">{navItem.name}</span>
+                {/* <span className="block sm:hidden">{navItem.icon}</span> */}
+                <span className=" text-sm">{navItem.name}</span>
               </Link>
             ))}
           </div>
-          <div className="gap-x-2 flex">
+          <div className="sm:hidden block z-[101] ">
+            <MenuToggle toggleMenu={toggleMenu} isOpen={isOpen} />
+          </div>
+          <div className="z-[98] sm:hidden block">
+            <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />
+          </div>
+          <div className="gap-x-2 hidden sm:flex text-sm">
             <button className=" border-[0.3px] text-sm font-medium relative text-white bg-[#fd7c22]  px-4 py-2 rounded-full">
               <span>Login</span>
             </button>
@@ -213,21 +227,23 @@ export const FloatingNav = ({ navItems, className }) => {
               <h4 className="font-semibold text-white">Only edu</h4>
             </div>
           </div>
-          <div className="flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-x-6">
+          <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-x-6 hidden sm:flex ">
             {navItems.map((navItem, idx) => (
               <Link
                 key={`link-${idx}`}
                 href={navItem.link}
                 className={cn(
-                  "relative  items-center flex space-x-1 text-white"
+                  "relative items-center flex space-x-1 text-white"
                 )}
               >
-                <span className="block sm:hidden">{navItem.icon}</span>
-                <span className="hidden sm:block text-sm">{navItem.name}</span>
+                <span className="text-sm">{navItem.name}</span>
               </Link>
             ))}
           </div>
-          <div className="gap-x-2 flex">
+          <div className="sm:hidden block z-[99] ">
+            <MenuToggle toggleMenu={toggleMenu} isOpen={isOpen} />
+          </div>
+          <div className="gap-x-2 hidden sm:flex ">
             <button className=" border-[0.3px] text-sm font-medium relative text-white bg-[#fd7c22]  px-4 py-2 rounded-full">
               <span>Login</span>
             </button>

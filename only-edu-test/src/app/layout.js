@@ -18,17 +18,17 @@ export const metadata = {
 };
 const navItems = [
   {
-    name: "Home",
+    name: "Skill test",
     link: "/",
     icon: <FaHome className="h-4 w-4 text-neutral-500 " />,
   },
   {
-    name: "About",
+    name: "Personality",
     link: "/about",
     icon: <FaUser className="h-4 w-4 text-neutral-500 " />,
   },
   {
-    name: "Contact",
+    name: "Aptitude",
     link: "/contact",
     icon: <FaMessage className="h-4 w-4 text-neutral-500 " />,
   },
