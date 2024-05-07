@@ -8,11 +8,11 @@ import { FaLinkedinIn, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
-<div className="pg-footer">
-    <footer className="footer">
-      <svg className="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-        <path className="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
-      </svg>
+<div className=" relative pg-footer">
+    <footer className="relative footer">
+    <svg className="absolute left-0 top-0 footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+    <path fill="#115e5d" className="footer-wave-path fill-[#115e5d]" d="M0,100h1200V44c-3.7,1-7.3,1.9-11,2.9C1119.3,78,1048.3,89.2,976.5,93.7c-52.2,3.4-105.5,2.3-158.5-3.5C762.3,84.5,709,74,658.9,57.4C608.8,40.8,505.9,12,380.9,12C255.9,12,152.3,40.8,99.1,57.4c-50.1,16.6-102.3,27.1-154.5,32.8C7.3,94.9,3.7,95.9,0,100z"></path>
+</svg>
       <div className="footer-content">
         <div className="footer-content-column">
           <div className="footer-logo">
