@@ -36,9 +36,9 @@ const navItems = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`relative ${poppins.className}`}>
+      <body className={`relative  ${poppins.className}`}>
         <FloatingNav navItems={navItems} />
-        <div className="">{children}</div>
+        <div className="rounded-b-full">{children}</div>
         <Footer />
       </body>
     </html>
