@@ -71,13 +71,14 @@ a {
     width: 100%;
 }
 .footer-wave-path {
-    fill: #d2faef;
+    /* fill: #d2faef; */
+    fill: #e6f3e2;
 }
 
 .footer-content {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1230px;
+    /* max-width: 1230px; */
     padding: 40px 15px 450px;
     position: relative;
 }
@@ -139,7 +140,7 @@ a {
 .footer-call-to-action-button {
     background-color: #9dced3;
     border-radius: 21px;
-    color: #fffff2;
+    color: #115e5d;
     display: inline-block;
     font-size: 11px;
     font-weight: 900;
@@ -303,8 +304,9 @@ a {
   .footer-content {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1230px;
-    padding: 40px 15px 1050px;
+    /* max-width: 1230px; */
+    /* padding: 40px 15px 1050px; */
+    padding: 40px 15px 900px;
     position: relative;
   }
 }
@@ -312,8 +314,10 @@ a {
   .footer-content {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1230px;
-    padding: 40px 15px 1050px;
+    /* max-width: 1230px; */
+    /* padding: 40px 15px 1050px; */
+    padding: 40px 15px 900px;
+
     position: relative;
   }
 }
@@ -321,8 +325,10 @@ a {
   .footer-content {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1230px;
-    padding: 40px 15px 1050px;
+    /* max-width: 1230px; */
+    /* padding: 40px 15px 1050px; */
+    padding: 40px 15px 900px;
+
     position: relative;
   }
 }
@@ -343,7 +349,7 @@ a {
   .footer-content {
       margin-left: auto;
       margin-right: auto;
-      max-width: 1230px;
+      /* max-width: 1230px; */
       padding: 40px 15px 410px;
       position: relative;
   }

@@ -2,9 +2,9 @@ import React from "react";
 
 const TestCards = () => {
   return (
-    <div className="aspect-auto bg-[#f2f0f0] rounded-2xl border shadow-sm p-5 grid  h-fit">
-      <div className="flex justify-between aspect-auto">
-        <div className="flex">
+    <div className="aspect-auto bg-[#f2f0f0] rounded-2xl border shadow-sm p-5  h-fit ">
+      <div className="flex justify-between flex-col  aspect-auto">
+        <div className="flex ">
           <div className="p-4 border rounded-md">
             <svg
               width="64"
@@ -30,7 +30,7 @@ const TestCards = () => {
               </defs>
             </svg>
           </div>
-          <div className="py-2 ml-2 font-medium flex flex-col">
+          <div className="py-2 ml-2 font-medium flex flex-col text-start">
             <h5>Engneering</h5>
             <h5 className="text-xs text-slate-500">
               <span>Software and programming</span>
@@ -43,7 +43,7 @@ const TestCards = () => {
             </h5>
           </div>
         </div>
-        <div className="flex justify-around flex-col mt-4 text-xs">
+        <div className="flex justify-around flex-col mt-4 text-xs gap-y-3">
           <button className="bg-[#fd7c22] text-white font-medium border border-gray-400 py-2 px-2 rounded-full">
             <span className="w-full">Start test</span>
           </button>
@@ -52,17 +52,7 @@ const TestCards = () => {
           </button>
         </div>
       </div>
-      <div className="options pt-4 flex flex-wrap aspect-auto gap-y-1 gap-x-1">
-        <button className="px-3 py-1 max-w-fit h-8 text-black text-xs rounded-full font-semibold hover:shadow-sm cursor-pointer border bg-gray-200 hover:bg-gray-200/70  ">
-          Mechanical engnieering
-        </button>
-        <button className="px-3 py-1  max-w-fit h-8 text-black text-xs rounded-full font-semibold hover:shadow-sm cursor-pointer border bg-gray-200  hover:bg-gray-200/70 ">
-          Electronic
-        </button>
-        <button className="px-3 py-1 max-w-fit h-8 text-black text-xs rounded-full font-semibold hover:shadow-sm cursor-pointer border bg-gray-200 hover:bg-gray-200/70 ">
-          Auto-mobile engineering
-        </button>
-      </div>
+     
     </div>
   );
 };
