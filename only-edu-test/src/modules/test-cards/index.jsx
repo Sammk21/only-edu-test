@@ -1,4 +1,7 @@
 import React from "react";
+import { FaTrophy } from "react-icons/fa";
+import { FaPencilAlt } from "react-icons/fa";
+import { MdOutlineAccessTimeFilled } from "react-icons/md";
 
 const TestCards = () => {
   return (
@@ -30,16 +33,22 @@ const TestCards = () => {
               </defs>
             </svg>
           </div>
-          <div className="py-2 ml-2 font-medium flex flex-col text-start">
+          <div className="py-2 ml-2 font-medium flex flex-col text-start ">
             <h5>Engneering</h5>
             <h5 className="text-xs text-slate-500">
               <span>Software and programming</span>
             </h5>
-            <h5 className="text-xs text-black mt-2">
+            <h5 className="text-xs text-black mt-2 flex gap-2 items-center">
+              <FaPencilAlt className="text-[#115e5d]" />
               Questions attempt: <span className="text-slate-500">97k+</span>
             </h5>
-            <h5 className="text-xs text-black">
+            <h5 className="text-xs text-black flex gap-2 items-center ">
+              <FaTrophy className="text-[#115e5d]" />
               Ranked youth: <span className="text-slate-500">50k+</span>
+            </h5>
+            <h5 class="text-xs text-black flex gap-2 items-center ">
+              <MdOutlineAccessTimeFilled className="text-[#115e5d]" />
+              Test Time: <span class="text-slate-500">15 min</span>
             </h5>
           </div>
         </div>
@@ -52,7 +61,6 @@ const TestCards = () => {
           </button>
         </div>
       </div>
-     
     </div>
   );
 };
