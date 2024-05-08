@@ -1,5 +1,5 @@
-import { Inter, Poppins } from "next/font/google";
-import "./globals.css";
+import { Poppins } from "next/font/google";
+import "../globals.css";
 import { FloatingNav } from "@/modules/layout/templates/nav";
 import Footer from "@/modules/layout/templates/footer/index";
 import { FaHome, FaUser } from "react-icons/fa";

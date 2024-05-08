@@ -53,9 +53,9 @@ const posts = [
 
 export default function Testemonials() {
   return (
-    <div className="bg-white py-24 sm:py-32">
+    <div className=" py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+        <div className="mx-auto max-w-2xl lg:mx-0 ">
           <h2 className="text-3xl font-bold tracking-tight text-[#115e5d] sm:text-4xl">
             Ask the people
           </h2>
