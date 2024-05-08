@@ -132,9 +132,12 @@ export const FloatingNav = ({ navItems, className }) => {
             <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />
           </div>
           <div className="gap-x-2 hidden sm:flex text-sm">
-            <button className=" border-[0.3px] text-sm font-medium relative text-white bg-[#fd7c22]  px-4 py-2 rounded-full">
+            <Link
+              href="/auth/login"
+              className=" border-[0.3px] text-sm font-medium relative text-white bg-[#fd7c22]  px-4 py-2 rounded-full"
+            >
               <span>Login</span>
-            </button>
+            </Link>
             <button className=" border-[0.3px] text-sm font-medium relative text-white px-4 py-2 rounded-full">
               <span>Register</span>
             </button>
@@ -244,9 +247,12 @@ export const FloatingNav = ({ navItems, className }) => {
             <MenuToggle toggleMenu={toggleMenu} isOpen={isOpen} />
           </div>
           <div className="gap-x-2 hidden sm:flex ">
-            <button className=" border-[0.3px] text-sm font-medium relative text-white bg-[#fd7c22]  px-4 py-2 rounded-full">
+            <Link
+              href="/auth/login"
+              className=" border-[0.3px] text-sm font-medium relative text-white bg-[#fd7c22]  px-4 py-2 rounded-full"
+            >
               <span>Login</span>
-            </button>
+            </Link>
             <button className=" border-[0.3px] text-sm font-medium relative text-white px-4 py-2 rounded-full">
               <span>Register</span>
             </button>
