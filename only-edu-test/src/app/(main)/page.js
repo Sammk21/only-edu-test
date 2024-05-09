@@ -1,6 +1,7 @@
 import CategoryCard from "@/modules/category/category-cards";
 import CategoryTemplate from "@/modules/category/category-template";
 import Hero from "@/modules/hero";
+import Testemonials from "@/modules/testemonials";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <div className="h-full w-full ">
           <Hero />
           <CategoryTemplate />
+          <Testemonials />
         </div>
       </div>
     </div>

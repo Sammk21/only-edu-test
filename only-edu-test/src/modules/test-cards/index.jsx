@@ -2,6 +2,8 @@ import React from "react";
 import { FaTrophy } from "react-icons/fa";
 import { FaPencilAlt } from "react-icons/fa";
 import { MdOutlineAccessTimeFilled } from "react-icons/md";
+import InstructionDialog from "../test-start/general-instruction-dialog";
+import InstructionDialogTestLink from "../test-start/general-instruction-dialog";
 
 const TestCards = () => {
   return (
@@ -53,9 +55,10 @@ const TestCards = () => {
           </div>
         </div>
         <div className="flex justify-around flex-col mt-4 text-xs gap-y-3">
-          <button className="bg-[#fd7c22] text-white font-medium border border-gray-400 py-2 px-2 rounded-full">
+          {/* <button className="bg-[#fd7c22] text-white font-medium border border-gray-400 py-2 px-2 rounded-full">
             <span className="w-full">Start test</span>
-          </button>
+          </button> */}
+          <InstructionDialogTestLink />
           <button className="bg-[#d5d5d5] text-black font-medium border border-gray-400 py-2 px-2 rounded-full">
             <span className="w-full">Save the test</span>
           </button>

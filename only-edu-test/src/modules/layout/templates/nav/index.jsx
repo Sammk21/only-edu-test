@@ -117,11 +117,11 @@ export const FloatingNav = ({ navItems, className }) => {
                 key={`link-${idx}`}
                 href={navItem.link}
                 className={cn(
-                  "relative  items-center flex space-x-1 text-white"
+                  "relative  items-center flex space-x-1 text-white  nav-links"
                 )}
               >
                 {/* <span className="block sm:hidden">{navItem.icon}</span> */}
-                <span className=" text-sm">{navItem.name}</span>
+                <span className=" text-sm ">{navItem.name}</span>
               </Link>
             ))}
           </div>
@@ -233,7 +233,7 @@ export const FloatingNav = ({ navItems, className }) => {
                 key={`link-${idx}`}
                 href={navItem.link}
                 className={cn(
-                  "relative items-center flex space-x-1 text-white"
+                  "relative items-center flex space-x-1 text-white nav-links"
                 )}
               >
                 <span className="text-sm">{navItem.name}</span>

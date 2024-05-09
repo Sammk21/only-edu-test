@@ -1,8 +1,8 @@
-import { Inter, Poppins } from "next/font/google";
-import "./globals.css";
+import { Poppins } from "next/font/google";
+import "../globals.css";
 import { FloatingNav } from "@/modules/layout/templates/nav";
 import Footer from "@/modules/layout/templates/footer/index";
-import { FaHome, FaUser } from "react-icons/fa";
+import { FaHeart, FaHome, FaUser } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
 
 const poppins = Poppins({
@@ -31,6 +31,11 @@ const navItems = [
     name: "Aptitude",
     link: "/contact",
     icon: <FaMessage className="h-4 w-4 text-neutral-500 " />,
+  },
+  {
+    name: "Favourites",
+    link: "/favourite",
+    icon: <FaHeart className="h-4 w-4 text-neutral-500 " />,
   },
 ];
 export default function RootLayout({ children }) {
