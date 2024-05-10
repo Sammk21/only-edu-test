@@ -16,7 +16,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "www.oracle.com",
+        hostname: "img.freepik.com",
       },
     ],
   },
