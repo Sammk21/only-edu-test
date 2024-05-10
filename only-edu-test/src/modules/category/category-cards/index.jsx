@@ -5,6 +5,10 @@ import React from "react";
 import { IoIosHeart } from "react-icons/io";
 
 const CategoryCard = ({ post }) => {
+
+
+  const slug = post.title.split(" ").join("");
+
   return (
     <div
       key={post.id}
@@ -26,7 +30,7 @@ const CategoryCard = ({ post }) => {
           <div>Ranked youth: {post.rankedYouth}</div>
         </div>
         <div className="flex justify-between mt-3">
-          <Link href={`/testpage/${post.id}`}>
+          <Link href={`/testpage/${slug}/${post.id}`}>
             <button className="bg-[#115e5d] text-white h-8 font-medium border border-gray-400 py-2 px-2 rounded-lg flex items-center justify-center w-full">
               View All
             </button>

@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SlClock } from "react-icons/sl";
 import { IoIosArrowBack } from "react-icons/io";
-
-import InstructionTestPage from "@/modules/test-start/test-page-instruction";
+import InstructionTestPage from "@/modules/test-start/dialogs/test-page-instruction";
+import SubmitTestDialog from "@/modules/test-start/dialogs/submit-test-confirmation-dialog";
 
 const TestStartPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -13,6 +13,9 @@ const TestStartPage = () => {
   const [radius, setRadius] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isinstructionDialogOpen, setIsInstructionDialogOpen] = useState(false);
+  const [isSubmitting, setSubmitting] = useState(false);
+
+  //dialog toggles
 
   const toggleInstructionDialog = () => {
     setIsInstructionDialogOpen(!isinstructionDialogOpen);
@@ -20,6 +23,10 @@ const TestStartPage = () => {
 
   const toggleSideBar = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const toggleSubmitDialog = () => {
+    setSubmitting(!isSubmitting);
   };
 
   useEffect(() => {
@@ -101,7 +108,10 @@ const TestStartPage = () => {
                 </div>
               </div>
               <div className="button">
-                <button className="bg-[#fd7c22] text-white font-medium border py-2 px-6 rounded-xl">
+                <button
+                  onClick={toggleSubmitDialog}
+                  className="bg-[#fd7c22] text-white font-medium border py-2 px-6 rounded-xl"
+                >
                   <span className="w-full text-sm sm:text-md md:text-md lg:text-lg">
                     Submit
                   </span>
@@ -308,7 +318,10 @@ const TestStartPage = () => {
                       Instructions
                     </span>
                   </button>
-                  <button className=" bg-[#115e5d] text-white  font-medium border py-2 px-6 rounded-xl">
+                  <button
+                    onClick={toggleSubmitDialog}
+                    className=" bg-[#115e5d] text-white  font-medium border py-2 px-6 rounded-xl"
+                  >
                     <span className="w-full text-sm sm:text-md md:text-md lg:text-lg">
                       Submit Test
                     </span>
@@ -333,6 +346,7 @@ const TestStartPage = () => {
         isOpen={isinstructionDialogOpen}
         toggle={toggleInstructionDialog}
       />
+      <SubmitTestDialog isOpen={isSubmitting} toggle={toggleSubmitDialog} />
     </>
   );
 };

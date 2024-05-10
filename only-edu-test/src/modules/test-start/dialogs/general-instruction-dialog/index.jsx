@@ -14,7 +14,6 @@ import { RxCross2 } from "react-icons/rx";
 import { BsPencilSquare } from "react-icons/bs";
 import { MdOutlinePending } from "react-icons/md";
 
-
 export default function InstructionDialogTestLink() {
   let [isOpen, setIsOpen] = useState(false);
   let [isChecked, setIsChecked] = useState(false);
@@ -29,8 +28,6 @@ export default function InstructionDialogTestLink() {
     setIsOpen(false);
     document.body.style.overflow = "hidden";
   }
-
-  console.log(isChecked);
 
   return (
     <>

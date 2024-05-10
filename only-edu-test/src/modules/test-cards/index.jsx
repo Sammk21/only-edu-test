@@ -1,37 +1,33 @@
 import React from "react";
-import { FaTrophy } from "react-icons/fa";
-import { FaPencilAlt } from "react-icons/fa";
-import { MdOutlineAccessTimeFilled } from "react-icons/md";
-import InstructionDialog from "../test-start/general-instruction-dialog";
-import InstructionDialogTestLink from "../test-start/general-instruction-dialog";
 import Image from "next/image";
 import { IoMdBookmark } from "react-icons/io";
-import { CiBookmark } from "react-icons/ci";
+import InstructionDialogTestLink from "../test-start/dialogs/general-instruction-dialog";
 
-const TestCards = () => {
+const TestCards = ({ test }) => {
   return (
     <>
       <div className="flex flex-col mb-4 rounded-3xl border-[2px] border-[#115e5d]  p-1 bg-white ">
         <div className="aspect-video bg-[#115e5d] rounded-2xl border shadow-md overflow-hidden relative">
           <Image
-            src="https://img.freepik.com/free-vector/creative-abstract-quantum-illustration_23-2149236239.jpg?size=338&ext=jpg&ga=GA1.1.735520172.1710374400&semt=ais"
+            src="https://cdn.kinandcarta.com/-/media-assets/images/kincarta/insights/2022/02/react-native/reactnative1200x6302x.png?as=0&iar=0&w=1200&rev=4085f8d10d2b4369b6d06ce15ce30e9b&hash=F7C985E466B4FDD9A05ACAEA99D450A0"
             alt="image"
             layout="fill"
             className="object-center object-cover rounded-lg transition-all duration-150 ease-out"
           />
         </div>
         <div className=" rounded-lg text-[#115e5d] py-2 px-4">
-          <h3 className="text-lg font-medium mb-1">React</h3>
-          <h5 className="text-sm mb-1">Basic fundamental</h5>
+          <h3 className="text-lg font-medium mb-1">{test.name}</h3>
+          <h5 className="text-sm mb-1">{test.subTitle}</h5>
           <div className="flex justify-between text-xs">
             <div>
               Questions attempt: <span className="text-slate-500">97k+</span>
             </div>
             <div>
-              Test Time: <span class="text-slate-500">15 min</span>
+              Test Time: <span class="text-slate-500">{test.TestTime}</span>
             </div>
             <div>
-              Ranked youth: <span className="text-slate-500">50k+</span>
+              Ranked youth:{" "}
+              <span className="text-slate-500">{test.rankedYouth}</span>
             </div>
           </div>
           <div className="flex justify-between mt-3">

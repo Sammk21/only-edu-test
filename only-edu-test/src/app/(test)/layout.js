@@ -1,5 +1,6 @@
 import { Poppins } from "next/font/google";
 import "../globals.css";
+import "../normalize.css";
 
 export const metadata = {
   title: "Next.js",
