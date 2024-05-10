@@ -3,10 +3,8 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { SlClock } from "react-icons/sl";
 import { IoIosArrowBack } from "react-icons/io";
-import { BsPencilSquare } from "react-icons/bs";
-import { MdOutlinePending } from "react-icons/md";
-import { RxCross2 } from "react-icons/rx";
-import { FaCheck } from "react-icons/fa";
+
+import InstructionTestPage from "@/modules/test-start/test-page-instruction";
 
 const TestStartPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -14,13 +12,10 @@ const TestStartPage = () => {
   const totalQuestions = 8; // Assuming there are 10 questions in total
   const [radius, setRadius] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isinstructionDialogOpen, setIsInstructionDialogOpen] = useState(false);
 
-  const handleNext = () => {
-    setCurrentPage(currentPage + 1);
-  };
-
-  const handlePrev = () => {
-    setCurrentPage(currentPage - 1);
+  const toggleInstructionDialog = () => {
+    setIsInstructionDialogOpen(!isinstructionDialogOpen);
   };
 
   const toggleSideBar = () => {
@@ -216,70 +211,6 @@ const TestStartPage = () => {
                 </span>
               </button>
             </div>
-            {/* <nav
-              className=" hidden :block"
-              aria-label="Page navigation example"
-            >
-              <ul class="inline-flex -space-x-px text-base h-10 text-[#115e5d] mt-16">
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-4 h-10 text-[#115e5d] ms-0 leading-tight  bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-[#115e5daf] hover:text-white "
-                  >
-                    Previous
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-4 h-10 text-[#115e5d] leading-tight  bg-white border border-gray-300 hover:bg-[#115e5daf] hover:text-white "
-                  >
-                    1
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-4 h-10 text-[#115e5d] leading-tight  bg-white border border-gray-300 hover:bg-[#115e5daf] hover:text-white "
-                  >
-                    2
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    aria-current="page"
-                    class="flex items-center justify-center px-4 h-10 text-white  border border-gray-300 bg-[#115e5d] hover:bg-[#115e5daf] hover:text-white"
-                  >
-                    3
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-4 h-10 text-[#115e5d] leading-tight  bg-white border border-gray-300 hover:bg-[#115e5daf] hover:text-white "
-                  >
-                    4
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-4 h-10 text-[#115e5d] leading-tight  bg-white border border-gray-300 hover:bg-[#115e5daf] hover:text-white "
-                  >
-                    5
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center justify-center px-4 h-10 text-[#115e5d] leading-tight  bg-white border border-gray-300 rounded-e-lg hover:bg-[#115e5daf] hover:text-white "
-                  >
-                    Next
-                  </a>
-                </li>
-              </ul>
-            </nav> */}
           </div>
         </div>
         <div
@@ -322,14 +253,16 @@ const TestStartPage = () => {
                     <span>Not visited</span>
                   </div>
                   <div className="flex gap-x-3 items-center">
-                    <span className="h-5 w-5 rounded-full bg-[#115e5d] border flex justify-center items-center text-black"></span>
+                    <span className="p-1 border-[1.5px] border-[#000] rounded-full">
+                      <span className="h-4 w-4 rounded-full bg-[#115e5d] border flex justify-center items-center text-black"></span>
+                    </span>
                     <span>Current question</span>
                   </div>
                 </div>
               </div>
               <div className="w-[90%] bg-[#fff] rounded-lg">
                 <div className="py-2 gap-y-1 px-2 font-medium text-sm">
-                  Section : 1
+                  Test : React
                 </div>
               </div>
               <div className="w-[90%] bg-[#e0e0e0] rounded-lg">
@@ -358,14 +291,19 @@ const TestStartPage = () => {
                   <span className="w-10 h-8 border-[1.5px] bg-red-600 rounded-md text-[#ededed] flex justify-center items-center">
                     8
                   </span>
-                  <span className="w-10 h-8 border-[1.5px] bg-[#115e5d] rounded-md text-[#ededed] flex justify-center items-center">
-                    9
+                  <span className="w-10 h-8 border-[1.5px] border-[#000]  rounded-md text-[#ededed] flex justify-center items-center p-1">
+                    <span className="bg-[#115e5d] w-full rounded-sm flex justify-center items-center">
+                      9
+                    </span>
                   </span>
                 </div>
               </div>
               <div className="absolute bottom-0 w-full">
                 <div className="flex flex-col py-3 px-3 gap-y-2">
-                  <button className="bg-[#d7d7d7] t text-[#115e5d] font-medium border py-2 px-6 rounded-xl">
+                  <button
+                    onClick={toggleInstructionDialog}
+                    className="bg-[#d7d7d7] t text-[#115e5d] font-medium border py-2 px-6 rounded-xl"
+                  >
                     <span className="w-full text-sm sm:text-md md:text-md lg:text-lg">
                       Instructions
                     </span>
@@ -391,6 +329,10 @@ const TestStartPage = () => {
           </div>
         </div>
       </div>
+      <InstructionTestPage
+        isOpen={isinstructionDialogOpen}
+        toggle={toggleInstructionDialog}
+      />
     </>
   );
 };

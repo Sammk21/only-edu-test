@@ -14,6 +14,7 @@ import { RxCross2 } from "react-icons/rx";
 import { BsPencilSquare } from "react-icons/bs";
 import { MdOutlinePending } from "react-icons/md";
 
+
 export default function InstructionDialogTestLink() {
   let [isOpen, setIsOpen] = useState(false);
   let [isChecked, setIsChecked] = useState(false);
@@ -35,7 +36,7 @@ export default function InstructionDialogTestLink() {
     <>
       <Button
         onClick={open}
-        className="bg-[#fd7c22] text-white font-medium border border-gray-400 py-2 px-2 rounded-full "
+        className="bg-[#115e5d] text-white h-8 font-medium border border-gray-400 py-2 px-2 rounded-lg flex items-center justify-center w-full"
       >
         Start test
       </Button>
@@ -169,6 +170,7 @@ export default function InstructionDialogTestLink() {
                           //   onClick={close}
                           onClick={() => setShowInstructions(true)}
                         >
+                          Continue
                           {/* <Link href="/test-start/2">Continue</Link> */}
                         </Button>
                       </div>
