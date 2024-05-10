@@ -1,70 +1,46 @@
 import React from "react";
-import { FaTrophy } from "react-icons/fa";
-import { FaPencilAlt } from "react-icons/fa";
-import { MdOutlineAccessTimeFilled } from "react-icons/md";
-import InstructionDialog from "../test-start/general-instruction-dialog";
-import InstructionDialogTestLink from "../test-start/general-instruction-dialog";
+import Image from "next/image";
+import { IoMdBookmark } from "react-icons/io";
+import InstructionDialogTestLink from "../test-start/dialogs/general-instruction-dialog";
 
-const TestCards = () => {
+const TestCards = ({ test }) => {
   return (
-    <div className="aspect-auto bg-[#f2f0f0] rounded-2xl border shadow-sm p-5  h-fit ">
-      <div className="flex justify-between flex-col  aspect-auto">
-        <div className="flex ">
-          <div className="p-4 border rounded-md">
-            <svg
-              width="64"
-              height="64"
-              viewBox="0 0 64 64"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clip-path="url(#clip0_40_20)">
-                <path
-                  d="M23.244 49.48C23.244 49.48 20.784 50.976 24.954 51.404C29.974 52.044 32.648 51.938 38.204 50.87C39.3207 51.5538 40.5016 52.1266 41.73 52.58C29.23 57.924 13.412 52.26 23.244 49.48ZM21.644 42.534C21.644 42.534 18.972 44.564 23.14 44.994C28.59 45.528 32.864 45.634 40.24 44.14C40.9574 44.8675 41.8356 45.4163 42.804 45.742C27.736 50.23 10.852 46.168 21.644 42.534ZM51.138 54.714C51.138 54.714 52.954 56.21 49.108 57.386C41.948 59.526 19.08 60.166 12.668 57.386C10.424 56.426 14.698 55.036 16.068 54.822C17.458 54.502 18.208 54.502 18.208 54.502C15.748 52.792 1.85802 58.028 11.156 59.522C36.696 63.69 57.748 57.706 51.122 54.714H51.138ZM24.4 35.266C24.4 35.266 12.752 38.046 20.232 39.006C23.438 39.434 29.742 39.326 35.62 38.9C40.428 38.472 45.24 37.62 45.24 37.62C45.24 37.62 43.53 38.368 42.354 39.116C30.494 42.216 7.73002 40.826 14.25 37.62C19.806 34.948 24.402 35.27 24.402 35.27L24.4 35.266ZM45.24 46.914C57.208 40.714 51.652 34.734 47.804 35.48C46.844 35.694 46.414 35.908 46.414 35.908C46.414 35.908 46.734 35.268 47.482 35.054C55.07 32.382 61.054 43.068 45.022 47.234C45.022 47.234 45.128 47.128 45.236 46.914H45.24ZM25.58 63.798C37.12 64.546 54.754 63.37 55.18 57.918C55.18 57.918 54.326 60.058 45.67 61.658C35.838 63.474 23.656 63.258 16.496 62.086C16.496 62.086 17.992 63.368 25.58 63.798Z"
-                  fill="#4E7896"
-                />
-                <path
-                  d="M37.992 0.00201416C37.992 0.00201416 44.618 6.73401 31.688 16.886C21.322 25.114 29.338 29.816 31.688 35.16C25.596 29.71 21.216 24.9 24.208 20.414C28.588 13.786 40.664 10.6 37.992 0.00201416ZM34.592 30.672C37.692 34.198 33.738 37.404 33.738 37.404C33.738 37.404 41.646 33.344 38.012 28.32C34.7 23.512 32.132 21.16 46.026 13.146C46.026 13.146 24.12 18.596 34.592 30.672Z"
-                  fill="#F58219"
-                />
-              </g>
-              <defs>
-                <clipPath id="clip0_40_20">
-                  <rect width="64" height="64" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
-          </div>
-          <div className="py-2 ml-2 font-medium flex flex-col text-start ">
-            <h5>Engneering</h5>
-            <h5 className="text-xs text-slate-500">
-              <span>Software and programming</span>
-            </h5>
-            <h5 className="text-xs text-black mt-2 flex gap-2 items-center">
-              <FaPencilAlt className="text-[#115e5d]" />
-              Questions attempt: <span className="text-slate-500">97k+</span>
-            </h5>
-            <h5 className="text-xs text-black flex gap-2 items-center ">
-              <FaTrophy className="text-[#115e5d]" />
-              Ranked youth: <span className="text-slate-500">50k+</span>
-            </h5>
-            <h5 class="text-xs text-black flex gap-2 items-center ">
-              <MdOutlineAccessTimeFilled className="text-[#115e5d]" />
-              Test Time: <span class="text-slate-500">15 min</span>
-            </h5>
-          </div>
+    <>
+      <div className="flex flex-col mb-4 rounded-3xl border-[2px] border-[#115e5d]  p-1 bg-white ">
+        <div className="aspect-video bg-[#115e5d] rounded-2xl border shadow-md overflow-hidden relative">
+          <Image
+            src="https://cdn.kinandcarta.com/-/media-assets/images/kincarta/insights/2022/02/react-native/reactnative1200x6302x.png?as=0&iar=0&w=1200&rev=4085f8d10d2b4369b6d06ce15ce30e9b&hash=F7C985E466B4FDD9A05ACAEA99D450A0"
+            alt="image"
+            layout="fill"
+            className="object-center object-cover rounded-lg transition-all duration-150 ease-out"
+          />
         </div>
-        <div className="flex justify-around flex-col mt-4 text-xs gap-y-3">
-          {/* <button className="bg-[#fd7c22] text-white font-medium border border-gray-400 py-2 px-2 rounded-full">
-            <span className="w-full">Start test</span>
-          </button> */}
-          <InstructionDialogTestLink />
-          <button className="bg-[#d5d5d5] text-black font-medium border border-gray-400 py-2 px-2 rounded-full">
-            <span className="w-full">Save the test</span>
-          </button>
+        <div className=" rounded-lg text-[#115e5d] py-2 px-4">
+          <h3 className="text-lg font-medium mb-1">{test.name}</h3>
+          <h5 className="text-sm mb-1">{test.subTitle}</h5>
+          <div className="flex justify-between text-xs">
+            <div>
+              Questions attempt: <span className="text-slate-500">97k+</span>
+            </div>
+            <div>
+              Test Time: <span class="text-slate-500">{test.TestTime}</span>
+            </div>
+            <div>
+              Ranked youth:{" "}
+              <span className="text-slate-500">{test.rankedYouth}</span>
+            </div>
+          </div>
+          <div className="flex justify-between mt-3">
+            <InstructionDialogTestLink />
+            <button className="bg-white h-8 group font-medium border group border-gray-400 text-[#fff0] py-2 px-2 rounded-lg flex items-center justify-center ml-2 ">
+              <span className="w-full group-hover:scale-125 group-hover:text-[#fd7c22] transition duration-200 ease-in-out">
+                <IoMdBookmark stroke="#fd7c22" strokeWidth={40} />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

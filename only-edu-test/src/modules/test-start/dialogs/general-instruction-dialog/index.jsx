@@ -29,13 +29,11 @@ export default function InstructionDialogTestLink() {
     document.body.style.overflow = "hidden";
   }
 
-  console.log(isChecked);
-
   return (
     <>
       <Button
         onClick={open}
-        className="bg-[#fd7c22] text-white font-medium border border-gray-400 py-2 px-2 rounded-full "
+        className="bg-[#115e5d] text-white h-8 font-medium border border-gray-400 py-2 px-2 rounded-lg flex items-center justify-center w-full"
       >
         Start test
       </Button>
@@ -169,6 +167,7 @@ export default function InstructionDialogTestLink() {
                           //   onClick={close}
                           onClick={() => setShowInstructions(true)}
                         >
+                          Continue
                           {/* <Link href="/test-start/2">Continue</Link> */}
                         </Button>
                       </div>
