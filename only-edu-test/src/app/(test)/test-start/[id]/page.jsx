@@ -70,7 +70,7 @@ const TestStartPage = () => {
 
   return (
     <>
-      <div className="w-screen h-screen bg-gradient-to-r from-orange-100 to-teal-100 flex flex-col px-2 py-3 sm:p-6  lg:p-8 relative">
+      <div className="w-screen h-fit overflow-x-hidden  flex flex-col px-2 py-3 sm:p-6  lg:p-8 relative">
         <div className="flex justify-between items-center font-semibold text-[#115e5d]">
           <span className="text-lg">Only edu</span>
           <div className="flex gap-x-3 items-center ">
@@ -81,14 +81,14 @@ const TestStartPage = () => {
                 className="object-cover object-center rounded-full"
               />
             </span>
-            <div className="flex flex-col font-medium text-sm">
+            <div className="flex flex-col font-medium text-xs sm:text-sm">
               <span>Sarfraj sayyad</span>
               <span className="underline ">sarfraj@onlyEdu.com</span>
             </div>
           </div>
         </div>
-        <div className="h-full w-full flex justify-center items-center my-3">
-          <div className="bg-[#f5f5f5] h-[calc(100%_-_4rem)] lg:h-[calc(100%_-_6rem)]  w-full  lg:w-[calc(100%_-_6rem)] rounded-3xl shadow-lg p-4 sm:py-6  lg:py-16 lg:px-10 flex flex-col">
+        <div className="h-full w-full flex justify-center items-center my-9">
+          <div className="bg-[#f5f5f5] h-full  w-full  lg:w-[calc(100%_-_6rem)] rounded-3xl shadow-lg p-4 sm:py-6  lg:py-16 lg:px-10 flex flex-col">
             <div className="w-full flex justify-between items-center ">
               <div className="flex gap-x-6">
                 <div className="clock text-5xl flex  items-center gap-x-3 text-[#115e5d]">

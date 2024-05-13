@@ -3,7 +3,7 @@ import React from "react";
 const MenuToggle = ({ toggleMenu, isOpen }) => {
   return (
     <div
-      className="flex items-center justify-center w-10 h-10 cursor-pointer flex-col "
+      className="flex items-center justify-center w-10 h-10 cursor-pointer flex-col z-50 "
       onClick={toggleMenu}
     >
       <div

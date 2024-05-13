@@ -10,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      transitionTimingFunction: {
+        "in-elastic": "cubic-bezier(0.68, -0.6, 0.32, 1.6)",
+        "out-elastic": "cubic-bezier(0.19, 1, 0.22, 1)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
