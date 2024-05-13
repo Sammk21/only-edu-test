@@ -1,17 +1,9 @@
-import { Poppins } from "next/font/google";
 import "../globals.css";
 import "../normalize.css";
 import { FloatingNav } from "@/modules/layout/templates/nav";
 import Footer from "@/modules/layout/templates/footer/index";
 import { FaHeart, FaHome, FaUser } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 export const metadata = {
   title: "Only education",
@@ -42,8 +34,9 @@ const navItems = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`relative  ${poppins.className}`}>
+      <body className={`relative`}>
         <FloatingNav navItems={navItems} />
+
         <div className="rounded-b-full">{children}</div>
         <Footer />
       </body>

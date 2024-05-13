@@ -11,7 +11,7 @@
 
 h1{
   font-size: 64px;
-  color:#115e5d
+
 }
 h2{
   font-size: 40px;
@@ -380,51 +380,18 @@ a {
 
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-@media only screen and (-webkit-min-device-pixel-ratio: 0) and (min-device-width: 1025px) {
-
-body {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 12px;
-    top: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
 }
-
-::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
-
-::-webkit-scrollbar-button:start:decrement,
-::-webkit-scrollbar-button:end:increment {
-    display: block;
-    height: 10px;
-}
-
-::-webkit-scrollbar-button:vertical:increment {
-    background-color: #fff;
-}
-
-::-webkit-scrollbar-track-piece {
+ 
+.no-visible-scrollbar::-webkit-scrollbar {
   display: none;
-  
 }
 
-::-webkit-scrollbar-thumb:vertical {
-    height: 50px;
-    background-color: #fd7c22;
-    -webkit-border-radius: 3px;
-}
 
-::-webkit-scrollbar-thumb:horizontal {
-    width: 50px;
-    background-color: #fd7c22;
-    -webkit-border-radius: 3px;
-}
-}
+/* ===== Swiper Css ===== */
 
 .swiper {
   width: 100%;
@@ -460,3 +427,47 @@ body {
   width: 100%; 
   left: 0; 
 }
+
+
+
+/*INPUT BUTTON CSS*/
+
+.inputGroup {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 1em 0 1em 0;
+  position: relative;
+}
+
+.inputGroup input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 2px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 20px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+  transform: translateY(-50%) scale(.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #fff;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
+}
+
