@@ -31,7 +31,9 @@ p{
     text-wrap: balance;
   }
 }
-
+.formIcons{
+  font-size: 20px;
+}
 .hero-sticky-button::before {
     content: "";
     display: block;
@@ -53,9 +55,10 @@ p{
   padding: 0;
 }
 a {
-  color: #fff;
+  /* color: #fff; */
   text-decoration: none;
 }
+
 
 
 .footer {
