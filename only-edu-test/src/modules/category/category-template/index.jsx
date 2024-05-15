@@ -1,7 +1,8 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import CategoryCard from "../category-cards";
-
+import { AnimatePresence, motion } from "framer-motion";
 export const categories = [
   {
     id: 1,
@@ -9,7 +10,6 @@ export const categories = [
     posts: [
       {
         id: 1,
-        svg: "",
         title: "Software Engineering",
         subTitle: "Software and programming",
         TestAttempts: "97k",
@@ -794,39 +794,66 @@ export const categories = [
 ];
 
 const CategoryTemplate = () => {
+  let [activeTab, setActiveTab] = useState(categories[0].id);
   return (
-    <div className=" mx-auto bg-[#F5EFE6] border rounded-3xl py-12 shadow-md">
-      <div className="sm:px-6 px-3">
-        <h1 className="capitalize mb-5 sm:mb-10 font-semibold sm:text-8xl lg:text-9xl tracking-tighter line-clamp-1">
+    <div className=" relative mx-auto border rounded-3xl py-12 shadow-sm">
+      <div className="sm:px-6 px-3 z-3">
+        <h1 className="capitalize mb-5 sm:mb-10 font-semibold sm:text-8xl lg:text-9xl tracking-tighter line-clamp-1 leading-normal my-2">
           Only tests
         </h1>
         <TabGroup>
-          <div className="sort flex gap-x-2 text-[#115e5d] py-5 overflow-x-scroll">
-            <TabList className="flex gap-4">
-              {categories.map(({ name }) => (
+          <TabList className="flex space-x-1 justify-center  ">
+            <div className="border rounded-lg bg-black/70 sm:rounded-full p-3 static z-0 flex flex-wrap gap-2">
+              {categories.map((tab) => (
                 <Tab
-                  key={name}
-                  className="bg-[#9dcdd3e0] px-4 py-2 rounded-full cursor-pointer data-[selected]:bg-[#fd7c22] data-[selected]:text-white hover:bg-[#fd7c22] hover:text-white transition-colors ease-in-out border active "
+                  key={tab.name}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`${
+                    activeTab === tab.id
+                      ? " text-black outline-white/40"
+                      : "hover:text-white/60 text-white"
+                  } relative hover:outline-white/40 border rounded-full font-medium px-3 py-2.5 text-sm  outline-none p-2 z-1 transition-all duration-200 ease-out`}
                 >
-                  {name}
+                  {activeTab === tab.id && (
+                    <motion.span
+                      layoutId="bubble"
+                      className="absolute inset-0 bg-white text-black   -z-10 "
+                      style={{ borderRadius: 9999 }}
+                      transition={{
+                        type: "spring",
+                        bounce: 0.3,
+                        duration: 0.6,
+                      }}
+                    />
+                  )}
+                  {tab.name}
                 </Tab>
               ))}
-            </TabList>
-          </div>
-          <TabPanels className="">
-            {categories.map(({ name, posts }) => (
-              <>
-                <TabPanel
-                  key={name}
-                  className="grid xl:grid-cols-4 py-2 gap-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1"
-                >
-                  {posts.map((post) => (
-                    <CategoryCard key={post?.id} name={name} post={post} />
-                  ))}
+            </div>
+          </TabList>
+
+          <div>
+            <TabPanels className=" container mx-auto py-12">
+              {categories.map(({ name, posts }) => (
+                <TabPanel key={name}>
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={name}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.4 }}
+                      className="grid xl:grid-cols-4 py-2 gap-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1"
+                    >
+                      {posts.map((post) => (
+                        <CategoryCard key={post?.id} name={name} post={post} />
+                      ))}
+                    </motion.div>
+                  </AnimatePresence>
                 </TabPanel>
-              </>
-            ))}
-          </TabPanels>
+              ))}
+            </TabPanels>
+          </div>
         </TabGroup>
       </div>
     </div>

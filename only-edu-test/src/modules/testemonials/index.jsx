@@ -53,24 +53,24 @@ const posts = [
 
 export default function Testemonials() {
   return (
-    <div className=" py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className=" py-24 sm:py-32 relative">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8 z-8">
         <div className="mx-auto max-w-2xl lg:mx-0 ">
-          <h2 className="text-3xl font-bold tracking-tight text-[#115e5d] sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl">
             Ask the people
           </h2>
           <p className="mt-2 text-lg leading-8 text-gray-600">
             How do they feel about our services
           </p>
         </div>
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
+        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t  pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 ">
           {posts.map((post) => (
             <article
               key={post.id}
-              className="flex max-w-xl flex-col items-start justify-between bg-[#115e5d] p-6 rounded-2xl"
+              className="flex max-w-xl flex-col items-start justify-between bg- p-6 rounded-2xl border"
             >
               <div className="flex items-center gap-x-4 text-xs">
-                <time dateTime={post.datetime} className="text-gray-200">
+                <time dateTime={post.datetime} className="text-black">
                   {post.date}
                 </time>
                 <a
@@ -81,13 +81,13 @@ export default function Testemonials() {
                 </a>
               </div>
               <div className="group relative">
-                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                  <a href={post.href}>
+                <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 ">
+                  <span>
                     <span className="absolute inset-0 text-black" />
                     {post.title}
-                  </a>
+                  </span>
                 </h3>
-                <p className="mt-5 line-clamp-3 text-sm leading-6 text-white">
+                <p className="mt-5 line-clamp-3 text-sm leading-6 text-black">
                   {post.description}
                 </p>
               </div>
@@ -99,10 +99,10 @@ export default function Testemonials() {
                 />
                 <div className="text-sm leading-6">
                   <p className="font-semibold text-gray-900">
-                    <a href={post.author.href}>
+                    <span>
                       <span className="absolute inset-0" />
                       {post.author.name}
-                    </a>
+                    </span>
                   </p>
                 </div>
               </div>

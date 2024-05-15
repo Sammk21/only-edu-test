@@ -8,7 +8,7 @@ import {
   TransitionChild,
 } from "@headlessui/react";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { BsPencilSquare } from "react-icons/bs";
@@ -26,14 +26,22 @@ export default function InstructionDialogTestLink() {
 
   function close() {
     setIsOpen(false);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = "auto";
   }
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
 
   return (
     <>
       <Button
         onClick={open}
-        className="bg-[#115e5d] text-white h-8 font-medium border border-gray-400 py-2 px-2 rounded-lg flex items-center justify-center w-full"
+        className="bg-black text-white h-8 font-medium border border-gray-400 py-2 px-2 rounded-lg flex items-center justify-center w-full"
       >
         Start test
       </Button>
@@ -55,21 +63,21 @@ export default function InstructionDialogTestLink() {
                 leaveFrom="opacity-100 transform-[scale(100%)]"
                 leaveTo="opacity-0 transform-[scale(95%)]"
               >
-                <DialogPanel className="w-full max-w-md rounded-xl bg-[#115e5d] p-6 backdrop-blur-2xl shadow-md">
+                <DialogPanel className="w-full max-w-md rounded-xl bg-white p-6 backdrop-blur-2xl shadow-md">
                   <DialogTitle
                     as="h3"
-                    className="text-base/7 font-medium text-white leading-tight"
+                    className="text-base/7 font-medium text-black leading-tight"
                   >
                     General information
                   </DialogTitle>
-                  <p className="mt-2 text-xs text-white">
+                  <p className="mt-2 text-xs text-black">
                     Read the folllowing carefully
                   </p>
                   {!showInstructions && (
                     <>
                       <div class="relative overflow-x-scroll py-4">
                         <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
-                          <thead class="text-xs text-white uppercase border-y ">
+                          <thead class="text-xs text-black uppercase border-y ">
                             <tr>
                               <th scope="col" class="px-6 py-3">
                                 No. of Question
@@ -86,10 +94,10 @@ export default function InstructionDialogTestLink() {
                             </tr>
                           </thead>
                           <tbody>
-                            <tr class="bg-transparent border-b text-white ">
+                            <tr class="bg-transparent border-b  ">
                               <th
                                 scope="row"
-                                class="px-6 py-4 font-medium text-white whitespace-nowrap"
+                                class="px-6 py-4 font-medium  whitespace-nowrap"
                               >
                                 50
                               </th>
@@ -100,7 +108,7 @@ export default function InstructionDialogTestLink() {
                           </tbody>
                         </table>
                       </div>
-                      <div className="text-white text-xs py-8">
+                      <div className=" text-xs py-8">
                         <>
                           <li className="py-2">
                             {" "}
@@ -135,15 +143,12 @@ export default function InstructionDialogTestLink() {
                           />
                         </div>
                         <div class="ms-2 text-sm">
-                          <label
-                            for="helper-checkbox"
-                            class="font-medium text-white"
-                          >
+                          <label for="helper-checkbox" class="font-medium ">
                             I have read and understood the instructions.
                           </label>
                           <p
                             id="helper-checkbox-text"
-                            class="text-xs font-normal text-gray-300 dark:text-gray-300"
+                            class="text-xs font-normal text-gray-500"
                           >
                             All computer hardware allotted to me are in proper
                             working condition. I declare that I am not in
@@ -160,7 +165,7 @@ export default function InstructionDialogTestLink() {
 
                       <div className="mt-4">
                         <Button
-                          className={`bg-[#fd7c22] text-white font-medium border border-gray-400 py-2 px-2 rounded-full text-xs ${
+                          className={`bg-[#fd7c22]  font-medium border border-gray-400 py-2 px-2 rounded-full text-xs ${
                             !isChecked &&
                             "cursor-not-allowed bg-gray-300 text-gray-500 "
                           }`}
@@ -175,7 +180,7 @@ export default function InstructionDialogTestLink() {
                   )}
                   {showInstructions && (
                     <>
-                      <div className="text-white text-xs py-8 gap-y-3 flex flex-col ">
+                      <div className="text-xs py-8 gap-y-3 flex flex-col ">
                         <div className="flex gap-x-3 items-center">
                           <span className="h-5 w-5 rounded-full bg-green-500 flex justify-center items-center p-1">
                             <FaCheck />
@@ -209,7 +214,7 @@ export default function InstructionDialogTestLink() {
                           </span>
                         </div>
                         <div className="flex gap-x-3 items-center">
-                          <span className="h-5 w-5 rounded-full bg-white flex justify-center items-center text-black">
+                          <span className="h-5 w-5 rounded-full border bg-white flex justify-center items-center text-black">
                             <MdOutlinePending />
                           </span>
                           <span>You have Not visited the question yet</span>
@@ -218,7 +223,7 @@ export default function InstructionDialogTestLink() {
 
                       <div className="mt-4">
                         <Button
-                          className={`bg-[#fd7c22] text-white font-medium border border-gray-400 py-2 px-2 rounded-full text-xs ${
+                          className={`bg-[#fd7c22]  font-medium border border-gray-400 py-2 px-2 rounded-full text-xs ${
                             !isChecked &&
                             "cursor-not-allowed bg-gray-300 text-gray-500 "
                           }`}
@@ -236,6 +241,7 @@ export default function InstructionDialogTestLink() {
                   )}
                 </DialogPanel>
               </TransitionChild>
+              <div className="absolute inset-0 bg-black opacity-50 -z-10"></div>
             </div>
           </div>
         </Dialog>
