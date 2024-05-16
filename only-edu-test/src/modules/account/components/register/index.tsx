@@ -7,6 +7,7 @@ import { LOGIN_VIEW } from "../../templates/login-template";
 import ErrorMessage from "../error-message";
 import { SubmitButton } from "../submit-button";
 import Link from "next/link";
+import { useForm } from 'react-hook-form';
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void;
@@ -16,11 +17,15 @@ const Register = ({ setCurrentView }: Props) => {
 
   const message = "error";
 
+   const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => alert(data);
+  console.log(errors);
+
   return (
     <div className="max-w-lg w-full flex flex-col items-center mx-auto bg-white p-8 rounded-xl border ">
       <h1 className="text-[2vw] uppercase mb-6 ">Become Our Member</h1>
       <p className="text-center text-[#115e5d] mb-4">Create you onlyEdu acc</p>
-      <form className="w-full flex flex-col text-black">
+      <form className="w-full flex flex-col text-black" onSubmit={handleSubmit(onSubmit)}>
         {/*action={formAction}*/}
         <div className="flex flex-col w-full gap-y-2">
           <Input
@@ -28,6 +33,7 @@ const Register = ({ setCurrentView }: Props) => {
             name="first_name"
             required
             autoComplete="given-name"
+            {...register("First name", {required: true, min: 2, maxLength: 15})}
           />
           <Input
             label="Last name"
@@ -35,6 +41,7 @@ const Register = ({ setCurrentView }: Props) => {
             required
             autoComplete="family-name"
           />
+          
           <Input
             label="Email"
             name="email"
