@@ -1,6 +1,7 @@
 import { Montserrat } from "next/font/google";
 import "../globals.css";
 import "../normalize.css";
+import { Providers } from "../providers";
 
 export const metadata = {
   title: "Next.js",
@@ -12,8 +13,10 @@ const montserrat = Montserrat({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={montserrat.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   );
 }
