@@ -9,6 +9,7 @@
 }
 
 
+
 h1{
   font-size: 64px;
 
@@ -62,7 +63,7 @@ a {
 
 
 .footer {
-    background-color: #115E5D;
+  
     color: #fff;
 }
 .footer-wave-svg {
@@ -102,11 +103,11 @@ a {
     padding-left: 15px;
     padding-right: 15px;
     width: 100%;
-    color: #fff;
+
 }
 
 .footer-content-column ul li a {
-  color: #fff;
+
   text-decoration: none;
 }
 
@@ -118,7 +119,6 @@ a {
 }
 
 .footer-menu-name {
-    color: #fffff2;
     font-size: 15px;
     font-weight: 900;
     letter-spacing: .1em;
@@ -139,21 +139,21 @@ a {
 }
 
 .footer-call-to-action-description {
-    color: #fffff2;
+
     margin-top: 10px;
     margin-bottom: 20px;
 }
 .footer-call-to-action-button:hover {
     background-color: #FD7C22;
-    color: #fff;
+
 }
 .button:last-of-type {
     margin-right: 0;
 }
 .footer-call-to-action-button {
-    background-color: #9dced3;
+ 
     border-radius: 21px;
-    color: #115e5d;
+   
     display: inline-block;
     font-size: 11px;
     font-weight: 900;
@@ -171,7 +171,7 @@ a {
     margin-top: 30px;
 }
 .footer-call-to-action-title {
-    color: #fffff2;
+
     font-size: 14px;
     font-weight: 900;
     letter-spacing: .1em;
@@ -183,11 +183,11 @@ a {
 .footer-call-to-action-link-wrapper {
     margin-bottom: 0;
     margin-top: 10px;
-    color: #fff;
+
     text-decoration: none;
 }
 .footer-call-to-action-link-wrapper a {
-    color: #fff;
+
     text-decoration: none;
 }
 
@@ -212,9 +212,7 @@ a {
     width: 236px;
 }
 
-.footer-social-amoeba-path {
-    fill: #9DCED3;
-}
+
 
 .footer-social-link.linkedin {
     height: 26px;
@@ -249,7 +247,7 @@ a {
 }
 
 .footer-social-icon-path {
-    fill: #115e5d;
+
     transition: fill .2s;
 }
 
@@ -275,8 +273,6 @@ a {
 }
 
 .footer-copyright {
-    background-color: #9DCED3;
-    color: #fff;
     padding: 15px 30px;
   text-align: center;
 }
@@ -288,7 +284,7 @@ a {
 }
 
 .footer-copyright-text {
-  color: #fff;
+
     font-size: 13px;
     font-weight: 400;
     line-height: 18px;
@@ -297,11 +293,9 @@ a {
 }
 
 .footer-copyright-link {
-    color: #115e5d;
     text-decoration: none;
 }
 .footer-social-icon-svg{
-  fill: #115e5d;
   font-size: 25px;
 }
 .footer-logo-link img{
@@ -445,7 +439,7 @@ a {
   font-size: 100%;
   padding: 0.8em;
   outline: none;
-  border: 2px solid rgb(200, 200, 200);
+
   background-color: transparent;
   border-radius: 20px;
   width: 100%;
@@ -459,7 +453,6 @@ a {
   margin-left: 0.5em;
   pointer-events: none;
   transition: all 0.3s ease;
-  color: rgb(100, 100, 100);
 }
 
 .inputGroup :is(input:focus, input:valid)~label {
@@ -467,7 +460,7 @@ a {
   margin: 0em;
   margin-left: 1.3em;
   padding: 0.4em;
-  background-color: #fff;
+
 }
 
 .inputGroup :is(input:focus, input:valid) {

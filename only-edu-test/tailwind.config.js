@@ -9,10 +9,29 @@ module.exports = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    colors: {
+      transparent: "transparent",
+      light: "#e2e2e2",
+      dark: "#09090b",
+      accent: "#a1a1aa",
+      foreground: "#27272a",
+      bluelink: "#2463eb",
+      error: "#ff3333",
+      border: "#3a3a3a",
+      borderLight: "#c7c7c7",
+      attempted: "#006400",
+      MarkAnswered: "#c49102",
+      visited: "#E1361B",
+      currQuestion: "#115e5d",
+      notVisited: "#fff",
+      marked: "#1D8CE0",
+    },
+
     extend: {
       transitionTimingFunction: {
         "in-elastic": "cubic-bezier(0.68, -0.6, 0.32, 1.6)",
         "out-elastic": "cubic-bezier(0.19, 1, 0.22, 1)",
+        "in-out-expo": "cubic-bezier(0.87, 0, 0.13, 1))",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -42,7 +61,7 @@ module.exports = {
   },
   plugins: [
     require("@headlessui/tailwindcss"),
-
+    require("autoprefixer"),
     // Or with a custom prefix:
   ],
 };
