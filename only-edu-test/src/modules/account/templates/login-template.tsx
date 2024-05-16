@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Login from "../components/login";
-import Register from "../components/register";
+import { Register } from "../components/register";
 
 export enum LOGIN_VIEW {
   SIGN_IN = "sign-in",
@@ -10,6 +10,8 @@ export enum LOGIN_VIEW {
 
 const LoginTemplate = () => {
   const [currentView, setCurrentView] = useState("sign-in");
+
+  console.log(currentView);
 
   return (
     <div className="w-full flex justify-start px-8 py-8 ">

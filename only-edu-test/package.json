@@ -13,11 +13,16 @@
     "@headlessui/tailwindcss": "^0.2.0",
 
     "@material-tailwind/html": "^2.2.2",
-    "@tabler/icons-react": "^3.3.0",
+    "@radix-ui/react-label": "^2.0.2",
+    "@tabler/icons-react": "^3.4.0",
     "autoprefixer": "^10.4.19",
 
     "clsx": "^2.1.1",
+<<<<<<< HEAD
     "framer-motion": "^11.1.8",
+=======
+    "framer-motion": "^11.2.3",
+>>>>>>> 1929c9890ec42f5c0c3f8e2ea0739acda4af3b14
     "next": "14.2.3",
     "next-themes": "^0.3.0",
     "react": "^18",

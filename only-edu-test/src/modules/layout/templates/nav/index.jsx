@@ -11,6 +11,7 @@ import Link from "next/link";
 import MenuToggle from "./menu-toggle/MenuToggle";
 import MobileMenu from "./mobile-menu";
 import { cubicBezier } from "framer-motion";
+import ThemeSwitch from "@/modules/theme-switch/ThemeSwitch";
 
 export const FloatingNav = ({ navItems, className }) => {
   const { scrollYProgress } = useScroll();
@@ -139,6 +140,7 @@ export const FloatingNav = ({ navItems, className }) => {
                 <span className="text-sm">{navItem.name}</span>
               </Link>
             ))}
+
             <Link
               href="/pricing"
               className={cn(
@@ -150,6 +152,7 @@ export const FloatingNav = ({ navItems, className }) => {
                 Go Pro
               </span>
             </Link>
+            <ThemeSwitch />
           </div>
           <div className="sm:hidden block z-[99] absolute right-5 top-5 ">
             <MenuToggle toggleMenu={toggleMenu} isOpen={isOpen} />

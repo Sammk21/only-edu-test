@@ -4,6 +4,7 @@ import { FloatingNav } from "@/modules/layout/templates/nav";
 import Footer from "@/modules/layout/templates/footer/index";
 import { FaHeart, FaHome, FaUser } from "react-icons/fa";
 import { FaMessage } from "react-icons/fa6";
+import { Providers } from "../providers";
 
 export const metadata = {
   title: "Only education",
@@ -33,11 +34,15 @@ const navItems = [
 ];
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`relative dark:bg-[#09090b]`}>
-        <FloatingNav navItems={navItems} />
-        <div className="rounded-b-full">{children}</div>
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`relative dark:bg-[#09090b] transition-all duration-300`}
+      >
+        <Providers>
+          <FloatingNav navItems={navItems} />
+          <div className="rounded-b-full">{children}</div>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
