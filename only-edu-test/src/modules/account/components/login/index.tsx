@@ -13,12 +13,12 @@ const Login = ({ setCurrentView }: Props) => {
   const message = null; //create form status service ti show error message
 
   return (
-    <div className="max-w-lg w-full flex flex-col items-center mx-auto bg-white p-8 rounded-xl border">
+    <div className="max-w-lg w-full flex flex-col text-dark dark:text-light items-center mx-auto bg-white p-8 rounded-xl border border-borderLight dark:border-border">
       <h1 className="text-[2vw] inline-flex uppercase mb-6">Welcome back</h1>
-      <p className="text-center text-base-regular text-[#115e5d] mb-8">
+      <p className="text-center text-base-regular  mb-8">
         Sign in to access an enhanced shopping experience.
       </p>
-      <form className="w-full text-black">
+      <form className="w-full ">
         {/* //add action={formAction} */}
         <div className="flex flex-col w-full gap-y-2">
           <Input

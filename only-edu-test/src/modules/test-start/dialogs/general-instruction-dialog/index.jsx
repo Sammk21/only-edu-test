@@ -41,7 +41,7 @@ export default function InstructionDialogTestLink() {
     <>
       <Button
         onClick={open}
-        className="bg-black text-white h-8 font-medium border border-gray-400 py-2 px-2 rounded-lg flex items-center justify-center w-full"
+        className=" bg-dark text-light  border border-borderLight dark:border-border h-8 font-medium py-2 px-2 rounded-lg flex items-center justify-center w-full hover:bg-dark/80"
       >
         Start test
       </Button>
@@ -63,10 +63,10 @@ export default function InstructionDialogTestLink() {
                 leaveFrom="opacity-100 transform-[scale(100%)]"
                 leaveTo="opacity-0 transform-[scale(95%)]"
               >
-                <DialogPanel className="w-full max-w-md rounded-xl bg-white p-6 backdrop-blur-2xl shadow-md">
+                <DialogPanel className="w-full max-w-md text-light dark:text-dark rounded-xl dark:bg-light p-6 backdrop-blur-3xl shadow-md">
                   <DialogTitle
                     as="h3"
-                    className="text-base/7 font-medium text-black leading-tight"
+                    className="text-base/7 font-medium  leading-tight"
                   >
                     General information
                   </DialogTitle>
@@ -182,13 +182,13 @@ export default function InstructionDialogTestLink() {
                     <>
                       <div className="text-xs py-8 gap-y-3 flex flex-col ">
                         <div className="flex gap-x-3 items-center">
-                          <span className="h-5 w-5 rounded-full bg-green-500 flex justify-center items-center p-1">
+                          <span className="h-5 w-5 rounded-full bg-attempted flex justify-center items-center p-1">
                             <FaCheck />
                           </span>
                           <span>You have answered the question.</span>
                         </div>
                         <div className="flex gap-x-3 items-center">
-                          <span className="rounded-full bg-red-500 h-5 w-5 flex justify-center items-center">
+                          <span className="rounded-full bg-visited h-5 w-5 flex justify-center items-center">
                             <RxCross2 />
                           </span>
                           <span>
@@ -196,7 +196,7 @@ export default function InstructionDialogTestLink() {
                           </span>
                         </div>
                         <div className="flex gap-x-3 items-center">
-                          <span className="h-5 w-5 flex justify-center items-center rounded-full bg-yellow-500">
+                          <span className="h-5 w-5 flex justify-center items-center rounded-full bg-marked">
                             <BsPencilSquare />
                           </span>
                           <span>
@@ -205,7 +205,7 @@ export default function InstructionDialogTestLink() {
                           </span>
                         </div>
                         <div className="flex gap-x-3 items-center">
-                          <span className="h-5 w-5 flex justify-center items-center rounded-full bg-orange-500">
+                          <span className="h-5 w-5 flex justify-center items-center rounded-full bg-MarkAnswered">
                             <BsPencilSquare />
                           </span>
                           <span>
@@ -214,7 +214,7 @@ export default function InstructionDialogTestLink() {
                           </span>
                         </div>
                         <div className="flex gap-x-3 items-center">
-                          <span className="h-5 w-5 rounded-full border bg-white flex justify-center items-center text-black">
+                          <span className="h-5 w-5 rounded-full border bg-notVisited flex justify-center items-center text-black">
                             <MdOutlinePending />
                           </span>
                           <span>You have Not visited the question yet</span>
@@ -246,6 +246,9 @@ export default function InstructionDialogTestLink() {
           </div>
         </Dialog>
       </Transition>
+      {isOpen && (
+        <div className="absolute top-0 left-0 w-screen h-screen backdrop-blur-sm bg-dark/50"></div>
+      )}
     </>
   );
 }
