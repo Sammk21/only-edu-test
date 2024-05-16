@@ -11,12 +11,11 @@
   "dependencies": {
     "@headlessui/react": "^2.0.3",
     "@headlessui/tailwindcss": "^0.2.0",
-<<<<<<< HEAD
-=======
+
     "@material-tailwind/html": "^2.2.2",
     "@tabler/icons-react": "^3.3.0",
     "autoprefixer": "^10.4.19",
->>>>>>> 0c2e5f6b397a573ded7ab90d85f3482bfa717022
+
     "clsx": "^2.1.1",
     "framer-motion": "^11.1.8",
     "next": "14.2.3",

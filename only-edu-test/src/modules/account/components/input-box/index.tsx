@@ -6,6 +6,7 @@ type InputProps = Omit<
   Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">,
   "placeholder"
 > & {
+  // error:boolean;
   label: string;
   errors?: Record<string, unknown>;
   touched?: Record<string, unknown>;
@@ -18,6 +19,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const inputRef = React.useRef<HTMLInputElement>(null);
     const [showPassword, setShowPassword] = useState(false);
     const [inputType, setInputType] = useState(type);
+
+
+    console.log(props)
 
     useEffect(() => {
       if (type === "password" && showPassword) {
@@ -38,15 +42,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {topLabel}
           </label>
         )}
-        <div className="inputGroup border border-borderLight dark:border-border rounded-3xl ">
-          <input
-            type={inputType}
-            name={name}
-            placeholder=" "
-            required={required}
-            {...props}
-            ref={inputRef}
-          />
+        {/* <div className="inputGroup border border-borderLight dark:border-border rounded-3xl "> */}
+        <div >
+
+
+
           <label
             className="text-accent dark:focus:bg-dark focus:bg-light focus:outline-foreground"
             htmlFor={name}
@@ -55,6 +55,15 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {label}
             {required && <span className="text-error">*</span>}
           </label>
+          <input
+            className={`inputGroup border border-borderLight dark:border-border rounded-3xl invalid:border-error invalid:text-error w-full py-4 px-4`}
+            type={inputType}
+            name={name}
+            placeholder=" "
+            required={required}
+            {...props}
+            ref={inputRef}
+          />
           {type === "password" && (
             <button
               type="button"
