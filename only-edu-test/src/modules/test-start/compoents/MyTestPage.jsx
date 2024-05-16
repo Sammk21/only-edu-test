@@ -158,12 +158,12 @@ const MyTestPage = () => {
                 r={radius}
                 fill="none"
                 // stroke="#115e5d"
-                strokeWidth="17"
+                strokeWidth="18"
                 strokeDasharray={circumference}
                 strokeDashoffset={strokeDashoffset}
                 strokeLinecap="round"
                 transform="rotate(-90 50% 50%)"
-                className="stroke-[#115e5d] dark:stroke-dark"
+                className="stroke-[#115e5d] dark:stroke-foreground/80 drop-shadow-sm border-borderLight dark:border-border"
               />
               <text
                 className="fill-dark dark:fill-light"

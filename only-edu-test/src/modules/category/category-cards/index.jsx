@@ -1,3 +1,4 @@
+import { Button } from "@headlessui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -5,8 +6,6 @@ import React from "react";
 import { IoIosHeart } from "react-icons/io";
 
 const CategoryCard = ({ post }) => {
-
-
   const slug = post.title.split(" ").join("");
 
   return (
@@ -38,9 +37,9 @@ const CategoryCard = ({ post }) => {
         </div>
         <div className="flex justify-between mt-3">
           <Link href={`/testpage/${slug}/${post.id}`}>
-            <button className="bg-dark text-light dark:text-black dark:bg-white h-8 font-medium border  border-borderLight dark:border-border py-2 px-2 rounded-lg flex items-center justify-center hover:bg-foreground w-full">
-              <span className="text-sm">view all</span>
-            </button>
+            <Button className="relative dark:bg-foreground text-light bg-dark z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs">
+              View all
+            </Button>
           </Link>
           <button className="bg-white dark:bg-dark h-8 font-medium  group border  border-borderLight dark:border-border  py-2 px-2 rounded-lg flex items-center justify-center ml-2 ">
             <IoIosHeart

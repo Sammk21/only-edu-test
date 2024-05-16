@@ -41,9 +41,9 @@ export default function InstructionDialogTestLink() {
     <>
       <Button
         onClick={open}
-        className=" bg-dark text-light  border border-borderLight dark:border-border h-8 font-medium py-2 px-2 rounded-lg flex items-center justify-center w-full hover:bg-dark/80"
+        className="relative dark:bg-foreground text-light bg-dark z-10 px-6 py-2 bg-black text-white font-bold rounded-xl block text-xs"
       >
-        Start test
+        Start the test
       </Button>
 
       <Transition appear show={isOpen}>

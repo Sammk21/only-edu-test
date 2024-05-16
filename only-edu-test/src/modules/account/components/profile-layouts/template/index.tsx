@@ -4,7 +4,7 @@ import AccountNav from "../../account-nav";
 import MyAccount from "../components/MyAccount";
 import AttemptedTests from "../components/AttemptedTests";
 import OrderHistory from "../components/OrderHistory";
-import Loader from "../../skeleton-loaders";
+
 import MyTests from "../components/MyTests";
 import { PiExamFill } from "react-icons/pi";
 
@@ -60,7 +60,9 @@ const TabComponent = () => {
             <div className="col-span-2 rounded-2xl bg-white">hello</div>
             {/* Suspense boundary with SkeletonLoader */}{" "}
             <div className="col-span-4 bg-white rounded-xl">
-              <Suspense fallback={<Loader />}>
+              <Suspense>
+                {" "}
+                {/*add fallback */}
                 {selectedTab === "My Tests" ? (
                   <MyTests />
                 ) : selectedTab === "Attempted Tests" ? (
