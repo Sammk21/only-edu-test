@@ -4,7 +4,7 @@ import AccountNav from "../../account-nav";
 import MyAccount from "../components/MyAccount";
 import AttemptedTests from "../components/AttemptedTests";
 import OrderHistory from "../components/OrderHistory";
-import Loader from "../../skeleton-loaders";
+
 import MyTests from "../components/MyTests";
 import { PiExamFill } from "react-icons/pi";
 
