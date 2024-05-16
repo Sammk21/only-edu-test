@@ -34,9 +34,8 @@ const navItems = [
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`relative`}>
+      <body className={`relative dark:bg-[#09090b]`}>
         <FloatingNav navItems={navItems} />
-
         <div className="rounded-b-full">{children}</div>
         <Footer />
       </body>

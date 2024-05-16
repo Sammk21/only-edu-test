@@ -17,10 +17,10 @@ const Register = ({ setCurrentView }: Props) => {
   const message = "error";
 
   return (
-    <div className="max-w-lg w-full flex flex-col items-center mx-auto bg-white p-8 rounded-xl border ">
+    <div className="max-w-lg w-full text-dark dark:text-light flex flex-col items-center mx-auto  dark:bg-dark p-8 rounded-xl border border-borderLight dark:border-border ">
       <h1 className="text-[2vw] uppercase mb-6 ">Become Our Member</h1>
-      <p className="text-center text-[#115e5d] mb-4">Create you onlyEdu acc</p>
-      <form className="w-full flex flex-col text-black">
+      <p className="text-center  mb-4">Create you onlyEdu acc</p>
+      <form className="w-full flex flex-col ">
         {/*action={formAction}*/}
         <div className="flex flex-col w-full gap-y-2">
           <Input
@@ -58,7 +58,7 @@ const Register = ({ setCurrentView }: Props) => {
           />
         </div>
         <ErrorMessage error={message} />
-        <span className="text-start text-[#115e5d] text-small-regular mt-6">
+        <span className="text-start  text-small-regular mt-6">
           By creating an account, you agree to only edu{" "}
           <Link
             href="/content/privacy-policy"
@@ -79,7 +79,7 @@ const Register = ({ setCurrentView }: Props) => {
           Join
         </SubmitButton>
       </form>
-      <span className="text-center text-[#115e5d] text-small-regular mt-6">
+      <span className="text-center text-small-regular mt-6">
         Already a member?{" "}
         <button
           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}

@@ -1,4 +1,4 @@
-import { Poppins, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "../globals.css";
 import "../normalize.css";
 

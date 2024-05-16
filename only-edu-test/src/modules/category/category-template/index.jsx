@@ -796,28 +796,30 @@ export const categories = [
 const CategoryTemplate = () => {
   let [activeTab, setActiveTab] = useState(categories[0].id);
   return (
-    <div className=" relative mx-auto border rounded-3xl py-12 shadow-sm">
-      <div className="sm:px-6 px-3 z-3">
-        <h1 className="capitalize mb-5 sm:mb-10 font-semibold sm:text-8xl lg:text-9xl tracking-tighter line-clamp-1 leading-normal my-2">
+    <div className="relative mx-auto py-12 shadow-sm bg-white dark:bg-dark">
+      <div className="z-3">
+        <h1 className=" dark:text-light sm:px-6 px-3 capitalize mb-5 sm:mb-10 font-semibold sm:text-8xl lg:text-9xl tracking-tighter line-clamp-1 leading-normal my-2">
           Only tests
         </h1>
         <TabGroup>
-          <TabList className="flex space-x-1 justify-center  ">
-            <div className="border rounded-lg bg-black/70 sm:rounded-full p-3 static z-0 flex flex-wrap gap-2">
+          <TabList className="flex space-x-1 overflow-x-auto scrollbar sm:justify-center ">
+            <div className=" rounded-3xl sm:rounded-full p-2 z-0 flex gap-2 bg-light  dark:bg-foreground">
+              {/* Map over the categories and render the tabs */}
               {categories.map((tab) => (
                 <Tab
                   key={tab.name}
                   onClick={() => setActiveTab(tab.id)}
                   className={`${
                     activeTab === tab.id
-                      ? " text-black outline-white/40"
-                      : "hover:text-white/60 text-white"
-                  } relative hover:outline-white/40 border rounded-full font-medium px-3 py-2.5 text-sm  outline-none p-2 z-1 transition-all duration-200 ease-out`}
+                      ? "text-light dark:text-light"
+                      : "hover:text-black/60 text-accent  dark:hover:text-light/60 "
+                  } relative rounded-full font-medium  py-2 text-sm outline-none p-2 z-1 transition-all duration-200 ease-out`}
                 >
+                  {/* Show a bubble for the active tab */}
                   {activeTab === tab.id && (
                     <motion.span
                       layoutId="bubble"
-                      className="absolute inset-0 bg-white text-black   -z-10 "
+                      className="absolute inset-0 bg-dark text-light shadow-md dark:text-light dark:bg-dark -z-10 "
                       style={{ borderRadius: 9999 }}
                       transition={{
                         type: "spring",
@@ -833,10 +835,12 @@ const CategoryTemplate = () => {
           </TabList>
 
           <div>
-            <TabPanels className=" container mx-auto py-12">
+            <TabPanels className="container mx-auto py-12">
+              {/* Map over the categories and render the tab panels */}
               {categories.map(({ name, posts }) => (
                 <TabPanel key={name}>
                   <AnimatePresence mode="wait">
+                    {/* Animate the tab panel */}
                     <motion.div
                       key={name}
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -845,6 +849,7 @@ const CategoryTemplate = () => {
                       transition={{ duration: 0.4 }}
                       className="grid xl:grid-cols-4 py-2 gap-3 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1"
                     >
+                      {/* Map over the posts and render the CategoryCard */}
                       {posts.map((post) => (
                         <CategoryCard key={post?.id} name={name} post={post} />
                       ))}

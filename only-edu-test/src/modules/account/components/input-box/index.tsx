@@ -1,5 +1,4 @@
 import React, { useEffect, useImperativeHandle, useState } from "react";
-
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 
@@ -35,9 +34,11 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     return (
       <div className="flex flex-col w-full">
         {topLabel && (
-          <label className="mb-2 txt-compact-medium-plus">{topLabel}</label>
+          <label className="mb-2 bg-light dark:bg-dark txt-compact-medium-plus">
+            {topLabel}
+          </label>
         )}
-        <div className="inputGroup">
+        <div className="inputGroup border border-borderLight dark:border-border rounded-3xl ">
           <input
             type={inputType}
             name={name}
@@ -46,15 +47,19 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {...props}
             ref={inputRef}
           />
-          <label htmlFor={name} onClick={() => inputRef.current?.focus()}>
+          <label
+            className="text-accent dark:focus:bg-dark focus:bg-light focus:outline-foreground"
+            htmlFor={name}
+            onClick={() => inputRef.current?.focus()}
+          >
             {label}
-            {required && <span className="text-rose-500">*</span>}
+            {required && <span className="text-error">*</span>}
           </label>
           {type === "password" && (
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="text-ui-fg-subtle px-4 focus:outline-none transition-all duration-150 outline-none focus:text-ui-fg-base absolute right-0 top-3"
+              className="text-accent px-4 focus:outline-none transition-all duration-150 outline-border focus:text-accent absolute right-0 top-3"
             >
               {showPassword ? <FaRegEye /> : <FaRegEyeSlash />}
             </button>
