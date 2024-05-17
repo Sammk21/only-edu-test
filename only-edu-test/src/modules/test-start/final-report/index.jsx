@@ -30,58 +30,58 @@ export const options = {
 const FinalReport = () => {
   return (
     <div className="py-28 text-dark dark:text-light px-5">
-      <div className="sm:flex sm:justify-between grid-cols-2 grid gap-4">
-        <div className="flex justify-between bg-white py-5 px-4 items-center   sm:w-[15%] w-full rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
+      <div className="lg:flex lg:justify-between grid-cols-2 grid gap-4">
+        <div className="flex justify-between bg-white py-5 px-4 items-center   lg:w-[15%] w-full rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
           <p>
             <span className=" font-semibold"> SCORE </span>
             <br />
             <span className="text-secondary  text-[16px]"> 0/280</span>
           </p>
           <span>
-            <GrScorecard className="  text-[24px]  hidden sm:block" />
+            <GrScorecard className="  text-[24px]  hidden lg:block md:block sm:block md:block sm:block xs:block" />
           </span>
         </div>
-        <div className="flex justify-between bg-white py-5 px-4 items-center  border border-borderLight dark:border-none  dark:bg-foreground  sm:w-[15%] w-full rounded-lg">
+        <div className="flex justify-between bg-white py-5 px-4 items-center  border border-borderLight dark:border-none  dark:bg-foreground  lg:w-[15%] w-full rounded-lg">
           <p>
             <span className=" font-semibold"> ACCURACY </span>
             <br />
             <span className="text-secondary  text-[16px]"> 0%</span>
           </p>
           <span>
-            <RiEye2Line className="  text-[24px]  hidden sm:block" />
+            <RiEye2Line className="  text-[24px]  hidden lg:block md:block sm:block xs:block" />
           </span>
         </div>
-        <div className="flex justify-between bg-white py-5 px-4 items-center  border border-borderLight dark:border-none  dark:bg-foreground  sm:w-[15%] w-full rounded-lg">
+        <div className="flex justify-between bg-white py-5 px-4 items-center  border border-borderLight dark:border-none  dark:bg-foreground  lg:w-[15%] w-full rounded-lg">
           <p>
             <span className=" font-semibold"> AIR </span>
             <br />
             <span className="text-secondary  text-[16px]"> 50/500</span>
           </p>
           <span>
-            <FaRankingStar className="  text-[24px]  hidden sm:block" />
+            <FaRankingStar className="  text-[24px]  hidden lg:block md:block sm:block xs:block" />
           </span>
         </div>
-        <div className="flex justify-between bg-white py-5 px-4 items-center border border-borderLight dark:border-none  dark:bg-foreground  sm:w-[15%] w-full rounded-lg">
+        <div className="flex justify-between bg-white py-5 px-4 items-center border border-borderLight dark:border-none  dark:bg-foreground  lg:w-[15%] w-full rounded-lg">
           <p>
             <span className=" font-semibold"> PERCENTAGE </span>
             <br />
             <span className="text-secondary text-[16px]"> 7%</span>
           </p>
           <span>
-            <AiOutlinePercentage className="  text-[24px]  hidden sm:block" />
+            <AiOutlinePercentage className="  text-[24px]  hidden lg:block md:block sm:block xs:block" />
           </span>
         </div>
-        <div className="flex justify-between bg-white py-5 px-4 items-center border border-borderLight dark:border-none  dark:bg-foreground  sm:w-[15%] w-full rounded-lg">
+        <div className="flex justify-between bg-white py-5 px-4 items-center border border-borderLight dark:border-none  dark:bg-foreground  lg:w-[15%] w-full rounded-lg">
           <p>
             <span className=" font-semibold"> PERCENTILE </span>
             <br />
             <span className="text-secondary text-[16px]"> 5%</span>
           </p>
           <span>
-            <HiMiniUserGroup className="  text-[24px]  hidden sm:block" />
+            <HiMiniUserGroup className="  text-[24px]  hidden lg:block md:block sm:block xs:block" />
           </span>
         </div>
-        <div className="flex justify-between bg-white py-5 px-4 items-center border border-borderLight dark:border-none dark:bg-foreground  sm:w-[15%] w-full rounded-lg">
+        <div className="flex justify-between bg-white py-5 px-4 items-center border border-borderLight dark:border-none dark:bg-foreground  lg:w-[15%] w-full rounded-lg">
           <p>
             <span className="text-[rgb(0 0 0 / 70%)] font-semibold">
               AVG TIME
@@ -90,12 +90,12 @@ const FinalReport = () => {
             <span className="text-secondary text-[16px]"> 7 Min</span>
           </p>
           <span>
-            <WiTime5 className="  text-[24px]  hidden sm:block" />
+            <WiTime5 className="  text-[24px]  hidden lg:block md:block sm:block xs:block" />
           </span>
         </div>
       </div>
-      <div className="grid sm:grid-cols-3 gap-x-3 mt-4  ">
-        <div className="bg-white rounded-lg mb-3 sm:mb-0 ">
+      <div className="grid lg:grid-cols-3 gap-x-3 mt-4  ">
+        <div className="bg-white rounded-lg mb-3 lg:mb-0 ">
           <div className=" ">
             <h3 className="p-3 "> LeaderBoard</h3>
           </div>
@@ -185,7 +185,7 @@ const FinalReport = () => {
             </ul>
           </div>
         </div>
-        <div className="bg-white rounded-lg mb-3 sm:mb-0">
+        <div className="bg-white rounded-lg mb-3 lg:mb-0">
           <div className=" ">
             <h3 className="p-3 "> Overview</h3>
           </div>
@@ -286,8 +286,8 @@ const FinalReport = () => {
               attempt.
             </p>
           </div>
-          <div className="p-4 flex justify-between flex-col sm:flex-row">
-            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground ">
+          <div className="p-4 flex justify-between flex-col lg:flex-row">
+            <div className="flex lg:gap-14 lg:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground ">
               <div className="">
                 <h4 className="text-lg text-[#115E5D] font-semibold	">
                   Attempted
@@ -298,7 +298,7 @@ const FinalReport = () => {
                 <PiPencilFill className="text-[24px] text-[#115E5D]" />
               </div>
             </div>
-            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
+            <div className="flex lg:gap-14 lg:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
               <div className="">
                 <h4 className="text-lg text-[#fd7c22] font-semibold	">
                   Correct
@@ -309,7 +309,7 @@ const FinalReport = () => {
                 <FiCheckCircle className="text-[24px] text-[#fd7c22]" />
               </div>
             </div>
-            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
+            <div className="flex lg:gap-14 lg:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
               <div className="">
                 <h4 className="text-lg text-[#dc2626] font-semibold	">
                   Incorrect
@@ -320,7 +320,7 @@ const FinalReport = () => {
                 <GoXCircle className="text-[24px] text-[#dc2626]" />
               </div>
             </div>
-            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
+            <div className="flex lg:gap-14 lg:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
               <div className="">
                 <h4 className="text-lg text-[#eab308] font-semibold	">
                   Time/Ques
