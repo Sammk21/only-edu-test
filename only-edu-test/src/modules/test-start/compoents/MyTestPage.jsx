@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { SlClock } from "react-icons/sl";
 import MySideBar from "./MySideBar";
 import InstructionTestPage from "../dialogs/test-page-instruction";
+import SubmitTestDialog from "../dialogs/submit-test-confirmation-dialog";
 
 const options = ["HTML", "CSS", "JavaScript", "Python"];
 

@@ -1,115 +1,19 @@
-// "use client";
-
-// import { useFormState } from "react-dom";
-// import Input from "../input-box";
-// import { LOGIN_VIEW } from "../../templates/login-template";
-// // import { signUp } from "@modules/account/actions";
-// import ErrorMessage from "../error-message";
-// import { SubmitButton } from "../submit-button";
-// import Link from "next/link";
-
-// type Props = {
-//   setCurrentView: (view: LOGIN_VIEW) => void;
-// };
-// const Register = ({ setCurrentView }: Props) => {
-//   // const [message, formAction] = useFormState(signUp, null);
-
-//   const message = "error";
-
-//   return (
-//     <div className="max-w-lg w-full text-dark dark:text-light flex flex-col items-center mx-auto  dark:bg-dark p-8 rounded-xl border border-borderLight dark:border-border ">
-//       <h1 className="text-[2vw] uppercase mb-6 ">Become Our Member</h1>
-//       <p className="text-center  mb-4">Create you onlyEdu acc</p>
-//       <form className="w-full flex flex-col ">
-//         {/*action={formAction}*/}
-//         <div className="flex flex-col w-full gap-y-2">
-//           <Input
-//             label="First name"
-//             name="first_name"
-//             required
-//             autoComplete="given-name"
-//           />
-//           <Input
-//             label="Last name"
-//             name="last_name"
-//             required
-//             autoComplete="family-name"
-//           />
-//           <Input
-//             label="Email"
-//             name="email"
-//             required
-//             type="email"
-//             autoComplete="email"
-//           />
-//           <Input
-//             required
-//             label="Phone"
-//             name="phone"
-//             type="tel"
-//             autoComplete="tel"
-//           />
-//           <Input
-//             label="Password"
-//             name="password"
-//             required
-//             type="password"
-//             autoComplete="new-password"
-//           />
-//         </div>
-//         <ErrorMessage error={message} />
-//         <span className="text-start  text-small-regular mt-6">
-//           By creating an account, you agree to only edu{" "}
-//           <Link
-//             href="/content/privacy-policy"
-//             className="underline text-blue-500"
-//           >
-//             Privacy Policy
-//           </Link>{" "}
-//           and{" "}
-//           <Link
-//             href="/content/terms-of-use"
-//             className="underline text-blue-500"
-//           >
-//             Terms of Use
-//           </Link>
-//           .
-//         </span>
-//         <SubmitButton className="w-full h-10 bg-white border px-4 rounded-full text-black hover:bg-gray-300 flex justify-between items-center mt-6">
-//           Join
-//         </SubmitButton>
-//       </form>
-//       <span className="text-center text-small-regular mt-6">
-//         Already a member?{" "}
-//         <button
-//           onClick={() => setCurrentView(LOGIN_VIEW.SIGN_IN)}
-//           className="underline"
-//         >
-//           Sign in
-//         </button>
-//         .
-//       </span>
-//     </div>
-//   );
-// };
-
-// export default Register;
-
 "use client";
-import React from "react";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { cn } from "@/util/cn";
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
+import {cn } from '@/util/cn'
+import { useForm } from 'react-hook-form';
+import { LOGIN_VIEW } from "../../templates/login-template";
+
 import {
   IconBrandGithub,
   IconBrandGoogle,
   IconBrandOnlyfans,
 } from "@tabler/icons-react";
-import { LOGIN_VIEW } from "../../templates/login-template";
 
-type Props = {
-  setCurrentView: (view: LOGIN_VIEW) => void;
-};
+type Props={
+  setCurrentView:(view:LOGIN_VIEW)=>void
+}
 export function Register({ setCurrentView }: Props) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -129,7 +33,9 @@ export function Register({ setCurrentView }: Props) {
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
+            <Input id="firstname" placeholder="Tyler" type="text" 
+            // {...register("First name", {required: true, min: 2, maxLength: 15})}
+             />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last name</Label>
@@ -145,7 +51,7 @@ export function Register({ setCurrentView }: Props) {
           <Input id="password" placeholder="••••••••" type="password" />
         </LabelInputContainer>
         <LabelInputContainer className="mb-8">
-          <Label htmlFor="twitterpassword">Your twitter password</Label>
+          <Label htmlFor="twitterpassword">confirm password</Label>
           <Input
             id="twitterpassword"
             placeholder="••••••••"
