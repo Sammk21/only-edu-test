@@ -1,18 +1,19 @@
 "use client";
-import React from "react";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { cn } from "@/util/cn";
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
+import {cn } from '@/util/cn'
+import { useForm } from 'react-hook-form';
+import { LOGIN_VIEW } from "../../templates/login-template";
+
 import {
   IconBrandGithub,
   IconBrandGoogle,
   IconBrandOnlyfans,
 } from "@tabler/icons-react";
-import { LOGIN_VIEW } from "../../templates/login-template";
 
-type Props = {
-  setCurrentView: (view: LOGIN_VIEW) => void;
-};
+type Props={
+  setCurrentView:(view:LOGIN_VIEW)=>void
+}
 export function Register({ setCurrentView }: Props) {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -32,7 +33,9 @@ export function Register({ setCurrentView }: Props) {
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
           <LabelInputContainer>
             <Label htmlFor="firstname">First name</Label>
-            <Input id="firstname" placeholder="Tyler" type="text" />
+            <Input id="firstname" placeholder="Tyler" type="text" 
+            // {...register("First name", {required: true, min: 2, maxLength: 15})}
+             />
           </LabelInputContainer>
           <LabelInputContainer>
             <Label htmlFor="lastname">Last name</Label>
@@ -48,7 +51,7 @@ export function Register({ setCurrentView }: Props) {
           <Input id="password" placeholder="••••••••" type="password" />
         </LabelInputContainer>
         <LabelInputContainer className="mb-8">
-          <Label htmlFor="twitterpassword">Your twitter password</Label>
+          <Label htmlFor="twitterpassword">confirm password</Label>
           <Input
             id="twitterpassword"
             placeholder="••••••••"

@@ -16,6 +16,7 @@ module.exports = {
       dark: "#09090b",
       accent: "#a1a1aa",
       foreground: "#27272a",
+      secondary: "#A1A1A1",
       bluelink: "#2463eb",
       error: "#ff3333",
       border: "#3a3a3a",
