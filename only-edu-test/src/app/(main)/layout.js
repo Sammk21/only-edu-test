@@ -12,7 +12,7 @@ export const metadata = {
 };
 const navItems = [
   {
-    name: "Skill test",
+    name: "Skilltest",
     link: "/",
     icon: <FaHome className="h-4 w-4 text-neutral-500 " />,
   },

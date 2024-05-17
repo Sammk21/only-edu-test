@@ -128,36 +128,38 @@ export const FloatingNav = ({ navItems, className }) => {
               </div>
             </Link>
           </div>
-          <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 gap-x-8 hidden sm:flex ">
-            {navItems.map((navItem, idx) => (
+          <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  hidden md:flex ">
+            <div className="flex justify-center items-center gap-x-8">
+              {navItems.map((navItem, idx) => (
+                <Link
+                  key={`link-${idx}`}
+                  href={navItem.link}
+                  className={cn(
+                    "relative items-center flex space-x-1 text-light nav-links"
+                  )}
+                >
+                  <span className="text-sm">{navItem.name}</span>
+                </Link>
+              ))}
+
               <Link
-                key={`link-${idx}`}
-                href={navItem.link}
+                href="/pricing"
                 className={cn(
-                  "relative items-center flex space-x-1 text-light nav-links"
+                  "relative items-center flex space-x-1 text-light nav-links "
                 )}
               >
-                <span className="text-sm">{navItem.name}</span>
+                <span className="text-sm">Pricing</span>
+                <span className="absolute -left-4 -top-5 text-[8px] bg-light text-dark p-[3px] rounded-full border  border-borderLight dark:border-border">
+                  Go Pro
+                </span>
               </Link>
-            ))}
-
-            <Link
-              href="/pricing"
-              className={cn(
-                "relative items-center flex space-x-1 text-light nav-links "
-              )}
-            >
-              <span className="text-sm">Pricing</span>
-              <span className="absolute -left-4 -top-5 text-[8px] bg-light text-dark p-[3px] rounded-full border  border-borderLight dark:border-border">
-                Go Pro
-              </span>
-            </Link>
-            <ThemeSwitch />
+              <ThemeSwitch />
+            </div>
           </div>
-          <div className="sm:hidden block z-[99] absolute right-5 top-5 ">
+          <div className="md:hidden block z-[99] absolute right-5 top-5 ">
             <MenuToggle toggleMenu={toggleMenu} isOpen={isOpen} />
           </div>
-          <div className="gap-x-2 hidden sm:flex justify-center items-center ">
+          <div className="gap-x-2 hidden md:flex justify-center items-center ">
             <Link
               href={"/auth"}
               className="border  border-borderLight dark:border-border text-sm font-medium relative text-light   px-4 py-2 rounded-full"
@@ -165,7 +167,7 @@ export const FloatingNav = ({ navItems, className }) => {
               <span>Login</span>
             </Link>
           </div>
-          <div className="z-[98] sm:hidden block">
+          <div className="z-[98] md:hidden block">
             <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />
           </div>
         </motion.div>
