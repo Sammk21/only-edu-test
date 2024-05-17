@@ -7,17 +7,17 @@ const MenuToggle = ({ toggleMenu, isOpen }) => {
       onClick={toggleMenu}
     >
       <div
-        className={`w-8 h-1 bg-white rounded-3xl transition-all duration-300 transform origin-center ${
+        className={`w-8 h-1 bg-light rounded-3xl transition-all duration-300 transform origin-center ${
           isOpen ? "rotate-45 translate-y-2 " : ""
         }`}
       ></div>
       <div
-        className={`w-8 h-1 bg-white rounded-3xl my-1 transition-all duration-300 opacity-100 ${
+        className={`w-8 h-1 bg-light rounded-3xl my-1 transition-all duration-300 opacity-100 ${
           isOpen ? "opacity-[0]" : ""
         }`}
       ></div>
       <div
-        className={`w-8 h-1 bg-white rounded-3xl  transition-all duration-300 transform origin-center ${
+        className={`w-8 h-1 bg-light rounded-3xl  transition-all duration-300 transform origin-center ${
           isOpen ? "-rotate-45 -translate-y-2" : ""
         }`}
       ></div>

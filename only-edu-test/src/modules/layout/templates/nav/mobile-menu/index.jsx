@@ -24,7 +24,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className="fixed top-0 right-0 h-full w-2/3 bg-[#115e5d] shadow z-10"
+            className="fixed top-0 right-0 h-screen w-2/3 bg-[#115e5d] dark:bg-dark text-dark dark:text-light  shadow z-[9999]"
           >
             <ul className="mt-20 text-xl">
               <li className="py-2 px-4">Menu Item 1</li>
