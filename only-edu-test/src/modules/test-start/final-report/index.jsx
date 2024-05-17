@@ -39,7 +39,7 @@ const FinalReport = () => {
             <span className="text-secondary  text-[16px]"> 0/280</span>
           </p>
           <span>
-            <GrScorecard className="  text-[24px]  hidden lg:block md:block sm:block md:block sm:block xs:block" />
+            <GrScorecard className="  text-[24px]  hidden lg:block md:block  xs:block" />
           </span>
         </div>
         <div className="flex justify-between bg-white py-5 px-4 items-center  border border-borderLight dark:border-none  dark:bg-foreground  lg:w-[15%] w-full rounded-lg">

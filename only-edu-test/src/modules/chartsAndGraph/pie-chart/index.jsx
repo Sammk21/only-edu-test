@@ -1,13 +1,15 @@
 "use client";
+
 // components/PieChart.js
-import React from "react";
-import dynamic from "next/dynamic";
+import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
-// Dynamically import ReactApexChart to avoid SSR issues
-
 const PieChart = () => {
-  const series = [44, 55, 13, 43, 22];
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  const series = [44, 55, 13, 43];
   const options = {
     chart: {
       type: "pie",
@@ -16,8 +18,8 @@ const PieChart = () => {
     legend: {
       position: "bottom",
     },
-    labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
-    colors: ["#000000", "#333333", "#555555", "#777777", "#999999"],
+    labels: ["Correct", "Wrong", "Unattempted", "Visited"],
+    colors: ["#000000", "#333333", "#555555", "#777777"],
     responsive: [
       {
         breakpoint: 1080,
@@ -41,10 +43,23 @@ const PieChart = () => {
           },
         },
       },
+      {
+        breakpoint: 320,
+        options: {
+          chart: {
+            width: 200,
+          },
+          legend: {
+            position: "bottom",
+          },
+        },
+      },
     ],
   };
 
-  return <Chart options={options} series={series} type="pie" width="380" />;
+  return mounted ? (
+    <Chart options={options} series={series} type="pie" width="380" />
+  ) : null;
 };
 
 export default PieChart;
