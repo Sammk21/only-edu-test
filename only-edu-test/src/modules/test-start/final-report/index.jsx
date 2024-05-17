@@ -277,17 +277,17 @@ const FinalReport = () => {
       </div>
       <div className="bg-white mt-4 rounded-lg">
         <div className=" ">
-          <h3 className="p-3 "> Attempted Efficiency</h3>
+          <h3 className="p-3 pb-1 "> Attempted Efficiency</h3>
         </div>
-        <div className="border-borderLight dark:border-border dark:bg-foreground rounded-lg border ">
-          <div className="p-4">
-            <p className="text-lg">
-              You spent <span className="text-[#eab308]">0 Min </span> on
-              deciding the questions you don't want to attempt.
+        <div className=" ">
+          <div className="p-3 pt-0">
+            <p className="text-sm text-secondary">
+              You spent 0 Min on deciding the questions you don't want to
+              attempt.
             </p>
           </div>
           <div className="p-4 flex justify-between flex-col sm:flex-row">
-            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4">
+            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground ">
               <div className="">
                 <h4 className="text-lg text-[#115E5D] font-semibold	">
                   Attempted
@@ -298,7 +298,7 @@ const FinalReport = () => {
                 <PiPencilFill className="text-[24px] text-[#115E5D]" />
               </div>
             </div>
-            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4">
+            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
               <div className="">
                 <h4 className="text-lg text-[#fd7c22] font-semibold	">
                   Correct
@@ -309,7 +309,7 @@ const FinalReport = () => {
                 <FiCheckCircle className="text-[24px] text-[#fd7c22]" />
               </div>
             </div>
-            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4">
+            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
               <div className="">
                 <h4 className="text-lg text-[#dc2626] font-semibold	">
                   Incorrect
@@ -320,7 +320,7 @@ const FinalReport = () => {
                 <GoXCircle className="text-[24px] text-[#dc2626]" />
               </div>
             </div>
-            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4">
+            <div className="flex sm:gap-14 sm:mb-0  items-center justify-between mb-4 py-5 px-4 rounded-lg border border-borderLight dark:border-none  dark:bg-foreground">
               <div className="">
                 <h4 className="text-lg text-[#eab308] font-semibold	">
                   Time/Ques
