@@ -2,7 +2,7 @@
 import React from "react";
 import { GrScorecard } from "react-icons/gr";
 import { IoTrophySharp } from "react-icons/io5";
-import { Chart } from "react-google-charts";
+// import { Chart } from "react-google-charts";
 import { GrEmptyCircle } from "react-icons/gr";
 import { FiCheckCircle } from "react-icons/fi";
 import { GoXCircle } from "react-icons/go";
@@ -14,6 +14,7 @@ import { FaRankingStar } from "react-icons/fa6";
 import { AiOutlinePercentage } from "react-icons/ai";
 import { HiMiniUserGroup } from "react-icons/hi2";
 import { WiTime5 } from "react-icons/wi";
+import PieChart from "@/modules/chartsAndGraph/pie-chart";
 
 export const data = [
   ["Task", "Hours per Day"],
@@ -189,16 +190,10 @@ const FinalReport = () => {
           <div className=" ">
             <h3 className="p-3 "> Overview</h3>
           </div>
-          <div className="h-[500px] flex flex-col justify-between border border-borderLight dark:border-none dark:bg-foreground rounded-lg">
-            <div>
+          <div className="h-[500px] w-full flex flex-col justify-between border border-borderLight dark:border-none dark:bg-foreground rounded-lg">
+            <div className="w-full flex h-full justify-center items-center">
               {" "}
-              <Chart
-                chartType="PieChart"
-                width="100%"
-                height="400px"
-                data={data}
-                options={options}
-              />
+              <PieChart />
             </div>
             <div className="p-3 ">
               <p className="text-secondary">
