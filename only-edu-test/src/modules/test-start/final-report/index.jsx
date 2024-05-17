@@ -225,11 +225,13 @@ const FinalReport = () => {
           <div className="h-[500px] flex flex-col justify-between">
             <div className="p-3">
               <table className="w-full text-[#9DCED3] p-3 text-left leading-9">
-                <tr className="border-b-2">
-                  <th>Name</th>
-                  <th>You</th>
-                  <th>Topper</th>
-                </tr>
+                <thead>
+                  <tr className="border-b-2">
+                    <th>Name</th>
+                    <th>You</th>
+                    <th>Topper</th>
+                  </tr>
+                </thead>
                 <tbody>
                   <tr className="border-b-2">
                     <td className="flex items-center gap-[10px] ">
